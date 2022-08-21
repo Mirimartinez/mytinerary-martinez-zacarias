@@ -5,9 +5,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  background-image: url();
-  background-repeat: no-repeat;
+  height: 100vh;
   background-size: cover;
   background-position: 40% 80%;
 }
@@ -15,8 +13,8 @@
 #video{
   position: fixed;
   z-index: -1;
-  width: 100%;
-  filter: brightness(0.9);
+  min-width: 100%;
+  min-height: 100%;  filter: brightness(0.9);
 }
 .Hero-title{
   color: rgb(40, 93, 111);
