@@ -1,25 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Satisfy&display=swap');
 .Footer-Aspect{
-    background: linear-gradient(45deg,#866649f5,rgba(237, 213, 183, 0.92),#866649f5);
+    background: linear-gradient(50deg,rgb(40, 93, 111),#fff,rgb(40, 93, 111));
     color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    min-height: 20vh;
-    height: 100%;
+    min-height: 15vh;
     padding: 0 3rem;
 }
 
-.Fotter-Logo{
+/* .Fotter-Logo{
     display: flex;
     width: 50px;
     height: 50px;
     justify-content: center;
     align-items: center;
     margin: 2px 2px
-    
-
-}
+} */
 
 .Fotter-LogoyCopy{
     display: flex;
@@ -35,7 +32,7 @@
     width: 34%;
     display: flex;
     flex-wrap: wrap;
-    color: #4a3827;
+    color: rgb(40, 93, 111);
     font-family: 'Satisfy', cursive;
     font-size: 2.5rem;
     justify-content:center;
@@ -55,17 +52,18 @@
 }
 .Footer-Anchor{
     font-family: 'IM Fell French Canon', serif;
-    background-color: #4a3827;
+    background-color: #fff;
     padding: 0.6rem ;
     text-decoration-line: none;
-    color: white;
+    color: rgb(40, 93, 111);
     font-size: 18px;
     border-radius: 10px;
+    font-weight: 600;
 }
 
 .Footer-Anchor:hover{
-    color: #4a3827;
-    background-color: rgba(237, 213, 183, 0.92);
+    color: #fff;
+    background-color: rgb(40, 93, 111);
     font-weight: 700;
 }
 
