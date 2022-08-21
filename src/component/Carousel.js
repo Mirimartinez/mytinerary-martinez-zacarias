@@ -21,10 +21,13 @@ function Carousel(props) {
     )
 
     return (
-    <div>
+    <div className='carouselButoom'>
+        <button className='buttom' type="" placeholder='<' ></button>
         <div className='slide CarouselStyle'>
+            
             {items.slice(start, end).map(itemView)}
         </div>
+        <button className='buttom' type=""></button>
     </div>
     )
 }
