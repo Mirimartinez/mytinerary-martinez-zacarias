@@ -11,8 +11,8 @@ function Carousel(props) {
 
     const itemView = (item) => (
         <div className='card item '>
-            <img className='ImageCity' src={item.url} />
-            <p className='move'>limg elements must have an alt prop, either with meaningful text</p>
+            <img className='ImageCity' alt='' src={item.url} />
+            <p className='move'></p>
             <p className='title'>{item.title}</p>
 
                 
