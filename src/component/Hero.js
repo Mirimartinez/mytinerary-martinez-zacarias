@@ -5,13 +5,13 @@ function Hero() {
     <div className="Hero">
       <video id='video' autoPlay loop muted>
       <source
-          src="https://player.vimeo.com/external/534082644.hd.mp4?s=28e9778e97e5a36b94e3e40a4733ce337757788e&profile_id=174&oauth2_token_id=57447761"
+          src="http://localhost:3000/videoHero.mp4"
           type="video/mp4"
         />
       </video>
       <h1 className='Hero-title'>MyTinerary</h1>
       <p className='Hero-subtitle'>Find your perfect trip, designed by insiders who know and love their cities!</p>
-      <button className='Hero-button' type="submit">Let's go!</button>
+      <button className='Hero-button' type="submit">Ready to see what we got for you?</button>
     </div>
   );
 }
