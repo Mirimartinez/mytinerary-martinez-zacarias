@@ -1,3 +1,5 @@
+import '../styles/Carousel.css'
+
 function Carousel(props) {
    
     const range = props.range
@@ -8,16 +10,19 @@ function Carousel(props) {
 
 
     const itemView = (item) => (
-        <div className='item'>
-            <img src={item.url} />
-            <p>{item.title}</p>
-        </div>
+        <div className='card item '>
+            <img className='ImageCity' src={item.url} />
+            <p className='move'>limg elements must have an alt prop, either with meaningful text</p>
+            <p className='title'>{item.title}</p>
 
+                
+            
+        </div>
     )
 
     return (
     <div>
-        <div className='slide'>
+        <div className='slide CarouselStyle'>
             {items.slice(start, end).map(itemView)}
         </div>
     </div>
