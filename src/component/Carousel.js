@@ -1,3 +1,5 @@
+import '../styles/Carousel.css'
+
 function Carousel(props) {
    
     const range = props.range
@@ -8,18 +10,24 @@ function Carousel(props) {
 
 
     const itemView = (item) => (
-        <div className='item'>
-            <img src={item.url} />
-            <p>{item.title}</p>
-        </div>
+        <div className='card item '>
+            <img className='ImageCity' alt='' src={item.url} />
+            <p className='move'></p>
+            <p className='title'>{item.title}</p>
 
+                
+            
+        </div>
     )
 
     return (
-    <div>
-        <div className='slide'>
+    <div className='carouselButoom'>
+        <button className='buttom' type="" placeholder='<' ></button>
+        <div className='slide CarouselStyle'>
+            
             {items.slice(start, end).map(itemView)}
         </div>
+        <button className='buttom' type=""></button>
     </div>
     )
 }
