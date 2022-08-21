@@ -1,21 +1,25 @@
 .CarouselStyle{
     display: flex;
-    width: 96%;
-    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 320px;
+    width: 310px;
     height: 350px;
     background: #e8e8e8;
     position: relative;
     box-shadow: 15px 15px 50px #adb5bd75;
     text-align: center;
     transition: all 0.3s ease-in;
-    border-radius: 4px solid black;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    margin: 2px;
   }
   
   .title {
@@ -25,23 +29,25 @@
     height: 5%;
     margin: 0;
     margin-bottom: 4px;
-    background-color: black;
+    /* box-shadow: 5px 10px solid rgba(255, 255, 255, 0.226) ; */
     color: #e8e8e8;
     position: absolute;
     bottom:calc(350px / 8);
     left: 40px;
-  
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    backdrop-filter: blur(10px);
+    border-radius: 360%;
 
   }
 
   .move {
-    transform: translateY(-22200%);
+    transform: translateY(2200%);
     display: flex;
     justify-content: space-around;
     width: 100%;
     height: 1%;
     opacity: 0;
-    transition: transform .9s ease, opacity .9s ease;
+    transition: transform 1s ease, opacity 1s ease;
     margin: 0;
     
 }
@@ -50,6 +56,24 @@
     width: 100%;
     height: 99%;
     background-color: cornflowerblue;
+    border-radius: 10px;
+}
+
+.carouselButoom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+
+}
+
+.buttom{
+  display: flex;
+  height: 30px;
+  width: 30px;
+  border-radius: 360%;
+
 }
 
   .card:hover {
@@ -57,29 +81,31 @@
     box-shadow: none;
     background-color: rgba(110, 255, 113, 0.319);
     box-shadow: 0 8px 50px #23232333;
+    
   }
   
   .card:hover .title{
-    transform: scale(2);
-    color: #f8f9fa;
+    transform: scale(1.5);
+    color: #060606;
   }
   
   .card::before {
     content: '';
     width: 100%;
     height: 0;
-    background: rgb(255, 63, 242);
+    background: rgb(64, 43, 10);
     position: absolute;
     left: 0;
     bottom: 0;
         /* Or Top */
     transition: 0.9s ease-in-out;
     z-index: 0;
+    border-radius: 10px;
   }
   
   .card:hover::before {
     height: 100%;
-    background-color: rgb(63, 114, 255);
+    background-color: #866649f5;
     background-image: none;
 
   }
