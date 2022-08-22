@@ -7,7 +7,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    height: 80.6vh;
+    height: 80vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 40% 80%;
@@ -18,7 +18,8 @@
     position: fixed;
     z-index: -1;
     min-width: 100%;
-    min-height: 100%;  filter: brightness(0.9);
+    min-height: 100%;  
+    filter: brightness(0.5);
 }
 
 .UnderConstruction-title{
