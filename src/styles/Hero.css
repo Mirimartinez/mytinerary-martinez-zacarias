@@ -43,7 +43,7 @@
   
 }
 .Hero-button:hover{
-  background-color: wheat;
+  background-color: rgba(242, 228, 202, 0.705);
   color: rgb(97, 153, 172);
   font-weight: 700;
 }
