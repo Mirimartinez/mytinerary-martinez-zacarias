@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-/* import Footer from './component/Footer.js'; */
+import Carousel from './component/Carousel.js';
+import Footer from './component/Footer.js';
 import './index.css';
-/* import App from './pages/App'; */
+import Hero from './component/Hero';
 import reportWebVitals from './reportWebVitals';
 /* import EventsCarousel from './component/EventsCarousel.js'; */
 import UnderConstruction from './pages/UnderConstruction.js';
@@ -14,6 +15,7 @@ root.render(
     <UnderConstruction />
     <FooterLayout />
     {/* <App />
+    <Hero />
     <EventsCarousel />
     <Footer /> */}
   </React.StrictMode>
