@@ -31,16 +31,16 @@
     justify-content: center;
     transition: all 0.4s ease-in;
     height: 5%;
-    margin: 0;
+    font-size: 20px;
     margin-bottom: 4px;
-    color: #e8e8e8;
+    color: #fff;
     position: absolute;
     bottom:calc(350px / 8);
-    left: 35%;
+    left: 31%;
     font-family: 'IM Fell French Canon', serif;
     backdrop-filter: blur(5px);
-    border-radius: 10px;
-    padding: .7rem;
+    border-radius: 8px;
+    padding: .2rem .5rem .7rem .5rem;
 
   }
 
@@ -79,17 +79,17 @@
 
 }
 
-  .card:hover {
+  /* .card:hover {
     cursor: pointer;
     box-shadow: none;
     background-color: rgba(110, 255, 113, 0.319);
     box-shadow: 0 8px 50px #23232333;
     
-  }
+  } */
   
   .card:hover .title{
     transform: scale(2.5);
-    color: rgb(64, 43, 10);
+    color: rgb(40, 93, 111);
     font-weight: 600;
     bottom: 50%;
   }
@@ -100,17 +100,16 @@
     height: 0;
     background: rgb(64, 43, 10);
     position: absolute;
-    left: 0;
-    bottom: 0;
+ 
         /* Or Top */
     transition: 0.4s ease-in-out;
     z-index: 0;
-    border-radius: 10px;
+    border-radius: 8px;
   }
   
   .card:hover::before {
     height: 100%;
-    background-color: rgba(237, 213, 183, 0.92);
+    background-color: rgba(237, 213, 183, 0.6);
     background-image: none;
 
   }
