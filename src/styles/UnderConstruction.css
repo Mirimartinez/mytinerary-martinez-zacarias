@@ -23,16 +23,18 @@
 }
 
 .UnderConstruction-title{
-    color: rgb(237, 214, 183);
+    color: rgb(40, 93, 111);
     font-size: 4rem;
     font-family: 'IM Fell French Canon';
+    text-shadow: 0px 1px 1px white;
     
 }
 
 .UnderConstruction-subtitle{
     font-size: 2rem;
-    color: wheat;
+    color:rgb(40, 93, 111);
     font-family: 'IM Fell French Canon';
+    text-shadow: 0px 1px 1px white
 }
 
 .UnderConstruction-Imagen{
