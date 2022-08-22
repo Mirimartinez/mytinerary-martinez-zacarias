@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Satisfy&display=swap');
+
+
+.UnderConstruction {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40% 80%;
+}
+
+
+#video{
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    filter: brightness(0.7);
+}
+
+.UnderConstruction-title{
+    color: rgb(237, 214, 183);
+    font-size: 4rem;
+    font-family: 'IM Fell French Canon';
+    
+}
+
+.UnderConstruction-subtitle{
+    font-size: 2rem;
+    color: wheat;
+    font-family: 'IM Fell French Canon';
+}
+
+.UnderConstruction-Imagen{
+    width: 250px;
+    height: 250px;
+    border-radius: 360%;
+    align-items: flex-end;
+
+}
