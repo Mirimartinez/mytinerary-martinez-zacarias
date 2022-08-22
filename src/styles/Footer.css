@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Satisfy&display=swap');
 .Footer-Aspect{
-    background: linear-gradient(50deg,rgb(40, 93, 111),#fff,rgb(40, 93, 111));
+    background: linear-gradient(50deg,rgb(40, 93, 111),rgb(98, 140, 154),#fff,rgb(98, 140, 154),rgb(40, 93, 111));
     color: white;
     display: flex;
     flex-wrap: wrap;
