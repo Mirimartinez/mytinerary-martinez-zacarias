@@ -6,9 +6,8 @@ function Footer() {
     return (
             <footer className='Footer-Aspect'>
                 <div className='Fotter-LogoyCopy'>
-                    
-                    {/* <img src="%PUBLIC_URL%/icon.png" alt="logo" className='Fotter-Logo'></img> */}
-                    <p>Copyright ©Mytinerary|2022</p>
+                    <img src="http://localhost:3000/logo.png" alt="logo" className='Fotter-Logo'></img>
+                    <p className='Footer-copy'>Copyright ©Mytinerary|2022</p>
                 </div>
                 <div className='Footer-Parrafo'>
                     <p><strong>Thanks for visiting!</strong></p>
