@@ -4,7 +4,8 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     margin: 7rem 0;
 }
 
@@ -12,8 +13,8 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 280px;
-    height: 310px;
+    width: 310px;
+    height: 480px;
     background: #e8e8e8;
     position: relative;
     box-shadow: 15px 15px 50px #adb5bd75;
@@ -22,13 +23,13 @@
     /* border: 1px solid rgb(64, 43, 10)s; */
     border-radius: 15px;
     background-color: rgb(64, 43, 10);
-    margin-right: 3rem;
-    margin-bottom: 3rem;
+
   }
   
   .title {
     display: flex;
     justify-content: center;
+    align-items: center;
     transition: all 0.4s ease-in;
     height: 5%;
     font-size: 20px;
@@ -40,7 +41,7 @@
     font-family: 'IM Fell French Canon', serif;
     backdrop-filter: blur(5px);
     border-radius: 8px;
-    padding: .2rem .5rem .7rem .5rem;
+    padding: .2rem .4rem .2rem .4rem;
 
   }
 
@@ -88,7 +89,7 @@
   } */
   
   .card:hover .title{
-    transform: scale(2.5);
+    transform: scale(2.0);
     color: rgb(40, 93, 111);
     font-weight: 600;
     bottom: 50%;
