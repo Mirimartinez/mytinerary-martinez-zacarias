@@ -5,19 +5,23 @@ import '../styles/Footer.css';
 function Footer() {
     return (
             <footer className='Footer-Aspect'>
-                <div className='Fotter-LogoyCopy'>
-                    <img src="http://localhost:3000/logo.png" alt="logo" className='Fotter-Logo'></img>
-                    <p className='Footer-copy'>Copyright ©Mytinerary|2022</p>
-                </div>
+                <div className="Footer-nav">
+        <nav>
+        <a className='Footer-a' id="contact" href="top">Back To TOP</a>
+        <a className='Footer-a' id="home" href="cities">Cities</a>
+        <a className='Footer-a' id="about" href="newcity">New City</a>
+        </nav>
                 <div className='Footer-Parrafo'>
                     <p><strong>Thanks for visiting!</strong></p>
+                    <p className='Footer-copy'>Copyright ©MyTinerary|2022</p>
                 </div>
-                <div className='Footer-Link'>
-                    <a className='Footer-Anchor' href="Home">Home</a>
-                    <a className='Footer-Anchor' href="Cities">Cities</a>
-                    </div>
+                
+                <div className='Fotter-LogoyCopy'>
+                    <img src="http://localhost:3000/logo1.png" alt="logo" className='Fotter-Logo'></img>
+                </div>
+        </div>
             </footer>
-
+        
 
 )
 }
