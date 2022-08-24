@@ -18,7 +18,7 @@ function EventsCarousel(){
     ]
 
     return(
-        <Carousel data={items} range={4} interval={4}  />
+        <Carousel data={items} range={4} slides={2} interval={5}  />
     )
 
 
