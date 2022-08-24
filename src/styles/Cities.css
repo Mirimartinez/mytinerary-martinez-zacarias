@@ -3,10 +3,11 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    height: 80vh;/*  ARREGLAR ESTOOOOO  --------------------*/
+    min-height: 80vh;/*  ARREGLAR ESTOOOOO  --------------------*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 40% 80%;
+    flex-direction: column;
 }
 #videoCities{
     position: fixed;
