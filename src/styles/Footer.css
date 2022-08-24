@@ -1,29 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Satisfy&display=swap');
 .Footer-Aspect{
-    background: linear-gradient(50deg,rgb(40, 93, 111),rgb(98, 140, 154),#fff,rgb(98, 140, 154),rgb(40, 93, 111));
+    background: linear-gradient(50deg,rgb(104, 132, 150),#fff,rgb(104, 132, 150));
     color: white;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     min-height: 15vh;
     padding: 0 3rem;
 }
 
+.Footer-nav{
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 10rem;
+}
 .Fotter-Logo{
     display: flex;
-    width: 100px;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
+    width: 175px;
+    height: 175px;
+    position: relative;
+    left: 2rem;
+}
+
+.Footer-copy{
+    color: rgb(40, 93, 111);
+    font-family: sans-serif;
+    font-size: 15px;
+    position: relative;
+    left: 3rem;
+    margin-top: -1rem;
 }
 
 .Fotter-LogoyCopy{
     display: flex;
-    flex-direction: column;
     width: 33%;
     flex-wrap: wrap;
     font-family: 'IM Fell French Canon', serif;
-    justify-content: flex-end;
 }
 
 .Footer-Parrafo{
@@ -33,37 +46,34 @@
     color: rgb(40, 93, 111);
     font-family: 'Satisfy', cursive;
     font-size: 2.5rem;
-    justify-content:center;
-    align-items: center;
+    position: relative;
+    left: 8rem;
 }
 
-.Footer-Link{
-    width: 33%;
+.Footer-a{
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    color: white;
     justify-content: center;
-    align-items: flex-end;
-    gap:10px;
-    font-size:12px;
-}
-
-.Footer-Anchor{
-    font-family: 'IM Fell French Canon', serif;
-    background-color: #fff;
-    padding: 0.5rem ;
-    text-decoration-line: none;
-    color: rgb(40, 93, 111);
-    font-size: 18px;
+    color: rgb(104, 132, 150);
+    text-decoration: none;
+    border: 2px solid rgb(40, 93, 111);
     border-radius: 10px;
-    font-weight: 600;
+    padding: 3px 10px;
+    margin-top: 6px;
+    text-align: justify;
+    background-color: antiquewhite;
+    font-weight: 700;    
+    text-transform: uppercase;
+    position: relative;
+    top: 2rem;
 }
-
-.Footer-Anchor:hover{
-    color: #fff;
+.Footer-a:hover{
     background-color: rgb(40, 93, 111);
-    font-weight: 700;
+    color: antiquewhite;
+    border: 2px solid antiquewhite; 
+    position: relative;
+    right: 2vw;
+
 }
 
 

@@ -1,0 +1,42 @@
+.Cities{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;/*  ARREGLAR ESTOOOOO  --------------------*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40% 80%;
+}
+#videoCities{
+    position: fixed;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;  
+    filter: brightness(0.7)
+}
+.Cities-title{
+    color: rgb(40, 93, 111);
+    font-size: 4rem;
+    font-family: 'IM Fell French Canon';
+    text-shadow: 3px 3px 3px white;
+    
+}
+.Cities-subtitle{
+    font-size: 2rem;
+    color:rgb(40, 93, 111);
+    font-family: 'IM Fell French Canon';
+    text-shadow: 2px 2px 2px white
+}
+.Cities-list-Cont{
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+.Cities-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
