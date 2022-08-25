@@ -1,4 +1,5 @@
 import '../styles/Cities.css'
+import Input from '../component/Input'
 
 function NewCity(){
     return(
@@ -9,6 +10,9 @@ function NewCity(){
                 type="video/mp4" />
             </video>
             <h1 className='Cities-title'>New City</h1>
+            <Input for='NewCity' labelText='Add New City'/>
+            <Input for='NewCityImg' labelText='Add City Image URL'/>
+
         </div>
     )
 }

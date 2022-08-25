@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     background-color: rgb(104, 132, 150);
-    /* position: fixed; */
+    position: fixed;
 }
 
 .Header-logo{
@@ -41,6 +41,11 @@
 
 .Header-nav{
     display: none;
+}
+
+.Header-profile{
+    height: 80px;
+    margin-top: 25px;
 }
 
 .Header-a:hover{
