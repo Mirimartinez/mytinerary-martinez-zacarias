@@ -46,7 +46,7 @@ function Header() {
             {pages.map(link)}
             <button className="Header-nav Header-a" onClick={handleOpenMenu}>Menu</button>
         </div>
-        <img src="https://cdn-icons-png.flaticon.com/512/5645/5645106.png" />
+        <img className='Header-profile' src="https://cdn-icons-png.flaticon.com/512/5645/5645106.png" />
         </div>
     )
     }

@@ -4,7 +4,7 @@ import EventsCarousel from '../component/EventsCarousel'
 function Eventspopulars() {
     return (
         <>
-        <div><p>events populars</p></div>
+        <div><h2>Popular Cities</h2></div>
             
             <EventsCarousel />
         </>
