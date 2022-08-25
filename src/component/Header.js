@@ -4,12 +4,14 @@ import '../styles/Header.css'
 
 
 const pages = [
-    { name: 'Home', to: '/' },
+    {name: 'Home', to: '/' },
+    { name: 'NewCity', to: '/NewCity' },
     { name: 'Cities', to: '/Cities' },
  
 ]
 
-const link = (page) => <LinkRouter className='Header-link' to={page.to}>{page.name}</LinkRouter>
+const link = (page) => <LinkRouter className='Header-none Header-a' to={page.to}>{page.name}</LinkRouter>
+const menu = (page) => <LinkRouter className=' Header-a' to={page.to}>{page.name}</LinkRouter>
 
 function Header() {
     const [open, setOpen] = useState(false)
@@ -24,21 +26,29 @@ function Header() {
 
 
     return (
-        <div>
+        <div className='Header-cont'>
+            <div id="Header-logo">
+            <img className="Header-logo" src="http://localhost:3000/logo.png" alt="logo"/>
+            </div>
+            <div id="Header-title" className="Header-color">
+            <h1 className="h1">MyTinerary</h1>
+            </div>
             <div> 
+                <nav className='Header-nav' > 
                 {
                     open
                         ? <ul>
-                            <li><a href="#">Profile</a></li>
-                            <li><a href="#">Log In</a></li>
+                            {pages.map(menu)}
                         </ul>
                         : null
                 }
-            </div>
+                </nav>
             {pages.map(link)}
-            <button onClick={handleOpenMenu}>Menu</button>
+            <button className="Header-nav Header-a" onClick={handleOpenMenu}>Menu</button>
+        </div>
+        <img src="https://cdn-icons-png.flaticon.com/512/5645/5645106.png" />
         </div>
     )
-}
+    }
 
 export default Header

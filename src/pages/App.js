@@ -1,22 +1,27 @@
 import React from 'react'
-import Hero from '../component/Hero'
-//import EventsCarousel from '../component/EventsCarousel'
+import Home from '../pages/Home'
 import Layout from '../layouts/Layout'
-//import NewCity from '../component/NewCity'
-//import Cities from '../component/Cities'
-//import UnderConstruction from './UnderConstruction'
+import NewCity from '../pages/NewCity'
+import Cities from '../pages/Cities'
+import Eventspopular from './Eventspopular'
+import UnderConstruction from './UnderConstruction'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
 
 export default function App() {
   return (
-    <>
-    <Layout>
-    <Hero />
-    {/*
-    <NewCity/>
-    <Cities/>
-    <EventsCarousel />
-      <UnderConstruction />*/}
+    <BrowserRouter>
+      <Layout>
+    <Routes>
+
+
+    <Route  path='/' element={<Home/>} />
+    <Route path='/Cities' element={<Cities/>} /> 
+    <Route path='/NewCity' element={<NewCity/>} />
+    <Route path='*' element={<UnderConstruction />} />
+    
+    </Routes>
     </Layout>
-    </>
+    </BrowserRouter>
   )
 }

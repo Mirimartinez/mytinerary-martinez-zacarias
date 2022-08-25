@@ -1,12 +1,12 @@
 import Footer from '../component/Footer'
-import Header from '../component/Header1'
+import Header from '../component/Header'
 
 function FooterLayout(props){
     return(
         <div>
-            <Header/>
+            <Header />
             { props.children }
-            <Footer/>
+            <Footer />
         </div>
     )
 }

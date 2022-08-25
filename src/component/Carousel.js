@@ -3,7 +3,7 @@ import { func } from 'prop-types' */
 /* import { clearInterval } from 'timers' */
 import '../styles/Carousel.css'
 import Arrow from './Carousel/Arrow'
-import {useEffect,useState} from 'react'
+import {useEffect,useState,} from 'react'
 
 function Carousel(props) {
     const range = props.range
@@ -53,7 +53,7 @@ function Carousel(props) {
 
 
 function next (){
-    if(start < items.length){
+    if(start < SlidesLimit-range){
     setStart(start+range)
     setEnd( end+range )
     } else{

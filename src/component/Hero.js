@@ -1,4 +1,5 @@
 import '../styles/Hero.css';
+import CallToAction from '../component/CallToAction'
 
 function Hero() {
   return (
@@ -11,7 +12,8 @@ function Hero() {
       </video>
       {/* <h1 className='Hero-title'>MyTinerary</h1> */}
       <p className='Hero-subtitle'>Find your perfect trip, designed by insiders who know and love their cities!</p>
-      <button className='Hero-button' type="submit">Ready to see what we got for you?</button>
+      <CallToAction  linkTo='Cities' buttonText='Ready to see what we got for you?' />
+      {/* <button className='Hero-button' type="submit">Ready to see what we got for you?</button> */}
     </div>
   );
 }

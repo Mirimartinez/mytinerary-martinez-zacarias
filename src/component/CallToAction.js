@@ -2,9 +2,9 @@ import {Link as LinkRouter} from 'react-router-dom'
 
 export default function CallToAction(props) {
     let linkTo = props.linkTo
-    let buttonText = props.buttonText.toUpperCase()
-    
+    let buttonText = props.buttonText
+
   return (
-    <LinkRouter to={linkTo} >{buttonText}</LinkRouter>
+    <LinkRouter className='Hero-button' to={linkTo} >{buttonText}</LinkRouter>
   )
 }

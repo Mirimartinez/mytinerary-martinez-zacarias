@@ -1,4 +1,4 @@
-import Carousel from "./Carousel";
+import Carousel from "../component/Carousel";
 
 function EventsCarousel(){
 
@@ -18,7 +18,7 @@ function EventsCarousel(){
     ]
 
     return(
-        <Carousel data={items} range={4} slides={2} interval={5}  />
+        <Carousel data={items} range={4} slides={3} interval={5}  />
     )
 
 

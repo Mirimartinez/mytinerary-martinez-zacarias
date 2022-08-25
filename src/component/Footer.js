@@ -1,24 +1,29 @@
 import React from 'react';
 import '../styles/Footer.css';
+import {Link as LinkRouter} from 'react-router-dom'
 
 
 function Footer() {
 
+    
     const scrollUp = () => {
         window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
+            top:0,
+            behavior: 'smooth'
         });
-      }
+    }
     
 
     return (
             <footer className='Footer-Aspect'>
                 <div className="Footer-nav">
         <nav>
-        <a className='Footer-a' id="contact" href="top">Back To TOP</a>
-        <a className='Footer-a' id="home" href="cities">Cities</a>
-        <a className='Footer-a' id="about" href="newcity">New City</a>
+        <button className='Footer-a' onClick={scrollUp} > Top</button>
+        {/* <a className='Footer-a' id="home" href="cities">Cities</a>
+        <a className='Footer-a' id="about" href="newcity">New City</a> */}
+        
+        <LinkRouter to="/Cities" className="Footer-a">Cities</LinkRouter>
+        <LinkRouter to="/NewCity" className="Footer-a">New City</LinkRouter>
         </nav>
                 <div className='Footer-Parrafo'>
                     <p><strong>Thanks for visiting!</strong></p>
