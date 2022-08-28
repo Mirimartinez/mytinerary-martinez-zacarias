@@ -1,5 +1,5 @@
-import Card from '../component/card'
-import '../styles/Card.css'
+import CityCard from './CityCard'
+import '../styles/CityCard.css'
 
 export default function CitiesCard() {
     let cities =[
@@ -18,7 +18,7 @@ export default function CitiesCard() {
     ]
     return(
         <div className='Cities-container'>
-            {cities.map(city => <Card city={city} key={city.title}/>)}
+            {cities.map(city => <CityCard city={city} key={city.title}/>)}
             
         </div>
     )
