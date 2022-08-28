@@ -23,7 +23,7 @@
     font-size: 4rem;
     font-family: 'IM Fell French Canon';
     text-shadow: 3px 3px 3px white;
-    
+    margin-top: 3rem;
 }
 .Cities-subtitle{
     font-size: 2rem;
@@ -33,7 +33,6 @@
 }
 .Cities-list-Cont{
     display: flex;
-    flex-direction: row-reverse;
     
 }
 .Cities-list{
