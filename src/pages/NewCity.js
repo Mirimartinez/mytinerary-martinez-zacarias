@@ -1,4 +1,4 @@
-import '../styles/Cities.css'
+import '../styles/NewCity.css'
 import Input from '../component/Input'
 
 function NewCity() {
@@ -8,21 +8,20 @@ function NewCity() {
         {key: 'Country', for: 'country', type: 'text'},
         {key: 'Population', for: 'population', type: 'number'},
         {key: 'Photo', for: 'photo', type: 'text'},
-        {key: 'Fundation', for: 'fundation', type: 'date'},
+        {key: 'Foundation', for: 'foundation', type: 'date'},
     ]    
 
     return(
-        <div className='Cities'>
-            <video id='videoCities' autoPlay loop muted>
+        <div className='NewCity'>
+            <video id='videoNewCity' autoPlay loop muted>
                 <source
-                src="http://localhost:3000/video.mp4"
+                src="http://localhost:3000/videoHero.mp4"
                 type="video/mp4" />
             </video>
-            <h1 className='Cities-title'>New City</h1>
+            <h1 className='NewCity-title'>New City</h1>
             <div className='NewCity-form'>
                 {datos.map(dato => <Input label={dato.key} for={dato.for} type={dato.type}/>)}
-                <label for="text">Text</label>
-                <textarea></textarea>
+            
             </div>
         </div>
     )
