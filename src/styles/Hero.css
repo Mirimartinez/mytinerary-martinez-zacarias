@@ -11,12 +11,13 @@
 }
 
 #video{
-  position: sticky;
+  position: absolute;
+  object-fit: fill;
   z-index: -1;
   min-width: 100%;
   min-height: 100%;  
   filter: brightness(0.5);
-  margin-top: 4.5rem;
+  /* margin-top: 4.5rem; */
 }
 .Hero-title{
   color: rgb(40, 93, 111);
