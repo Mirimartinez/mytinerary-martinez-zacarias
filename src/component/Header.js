@@ -33,6 +33,7 @@ function Header() {
             <div id="Header-title" className="Header-color">
             <h1 className="h1">MyTinerary</h1>
             </div>
+                <img className='Header-profile' alt='profile' src="https://media0.giphy.com/media/kcZlnhiaB1p76tKS6S/giphy.gif?cid=790b7611658a2c1837a6b243c6e5b7c5f9203dcba641b933&rid=giphy.gif&ct=s" />
             <div> 
                 <nav className='Header-nav' > 
                 {
@@ -46,7 +47,6 @@ function Header() {
             {pages.map(link)}
             <button className="Header-nav Header-a" onClick={handleOpenMenu}>Menu</button>
         </div>
-        <img className='Header-profile' src="https://cdn-icons-png.flaticon.com/512/5645/5645106.png" />
         </div>
     )
     }

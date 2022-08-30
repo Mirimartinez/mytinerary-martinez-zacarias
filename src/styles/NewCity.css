@@ -1,44 +1,32 @@
-.Cities{
+.NewCity{
     display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
-
     min-height: 80vh;
-
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 40% 80%;
-    flex-direction: column;
+    margin-top: -6.2rem;
 }
-#videoCities{
+#videoNewCity{
     position: fixed;
     z-index: -1;
     min-width: 100%;
     min-height: 100%;  
-    filter: brightness(0.7)
+    filter: brightness(0.4);
 }
-.Cities-title{
+.NewCity-title{
     color: rgb(40, 93, 111);
     font-size: 4rem;
     font-family: 'IM Fell French Canon';
     text-shadow: 3px 3px 3px white;
-    margin-top: 3rem;
+    margin: 4rem 0 1rem 0;
 }
-.Cities-subtitle{
-    font-size: 2rem;
+.NewCity-subtitle{
+    font-size: 1.4rem;
     color:rgb(40, 93, 111);
     font-family: 'IM Fell French Canon';
-    text-shadow: 2px 2px 2px white
-}
-.Cities-list-Cont{
-    display: flex;
-    
-}
-.Cities-list{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    text-shadow: 2px 2px 2px white;
 }
