@@ -5,6 +5,8 @@ import '../styles/Carousel.css'
 import Arrow from './Carousel/Arrow'
 import {useEffect,useState,} from 'react'
 
+
+
 function Carousel(props) {
     const range = props.range
     const SlidesLimit = (props.slides * range)
@@ -14,8 +16,9 @@ function Carousel(props) {
     const items = props.data
     const interval = props.interval * 1000
 
-    console.log(start)
 
+
+console.log(start)
 
     const itemView = (item) => (
         <div className='card item '>
@@ -27,10 +30,14 @@ function Carousel(props) {
     )
 
 
+
+
     useEffect(() =>{
         let id = setInterval(function (){
             next()
         }, interval)
+
+
 
 
         setIntervalId(id)
@@ -39,6 +46,10 @@ function Carousel(props) {
 
         }, [start])
     
+
+
+
+
 
     function previous( ) {
         if(start >= range){
@@ -50,6 +61,7 @@ function Carousel(props) {
         }
         clearInterval(intervalId)
 }
+
 
 
 function next (){
