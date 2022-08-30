@@ -1,13 +1,15 @@
+import '../styles/Input.css' 
 function Input(props) {
-    let name = props.name
-    let user_name = props.user_name
-    let labelText = props.labelText
-    return(
-        <div className=''>
-                <label for={name}>{labelText}</label>
-                <input type="text" id={name} name={user_name}></input>
+    let inputFor = props.for
+    let type = props.type
+    let label = props.label
 
-    </div>
+
+    return(
+        <div className='Input-form'>
+                <label for={inputFor}>{label}</label>
+                <input type={type} id={inputFor} name={inputFor}></input>
+        </div>
     )
 
 }
