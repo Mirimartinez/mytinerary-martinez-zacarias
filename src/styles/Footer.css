@@ -86,10 +86,12 @@
 
 }
 
-.Footer-top{
+
+.Footer-scroolUp{
     font-size: 1rem;
 
 }
+
 
 
 @media (max-width:768px){
@@ -145,6 +147,7 @@
 
 
 
+
     .Footer-nav{
         background: linear-gradient(50deg,rgb(104, 132, 150),#fff,rgb(104, 132, 150));
         color: white;
@@ -180,3 +183,4 @@
 
 
 }
+

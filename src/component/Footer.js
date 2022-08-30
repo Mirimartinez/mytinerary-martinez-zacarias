@@ -4,6 +4,7 @@ import {Link as LinkRouter} from 'react-router-dom'
 
 
 function Footer() {
+
     
     const scrollUp = () => {
         window.scrollTo({
@@ -11,8 +12,6 @@ function Footer() {
             behavior: 'smooth'
         });
     }
-
-
 
 
     return (
@@ -29,7 +28,7 @@ function Footer() {
                     <p><strong>Thanks for visiting!</strong></p>
                     <p className='Footer-copy'>Copyright ©MyTinerary|2022</p>
                 </div>
-                
+                <button className='Footer-scroolUp' onClick={scrollUp}>TOP</button>
                 <div className='Fotter-LogoyCopy'>
                     <img src="http://localhost:3000/logo1.png" alt="logo" className='Fotter-Logo'></img>
                 </div>
