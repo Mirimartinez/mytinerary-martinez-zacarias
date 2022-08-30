@@ -7,10 +7,10 @@ function Input(props) {
 
     return(
         <div className='Input-form'>
-                <label for={inputFor}>{label}</label>
-                <input type={type} id={inputFor} name={inputFor}></input>
+                <label className='Input-label' for={inputFor}>{label}</label>
+                <input className='Input-input' type={type} id={inputFor} name={inputFor}></input>
         </div>
     )
-
+        
 }
 export default Input
