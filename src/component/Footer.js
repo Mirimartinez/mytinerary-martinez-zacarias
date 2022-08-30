@@ -11,14 +11,16 @@ function Footer() {
             behavior: 'smooth'
         });
     }
-    
+
+
+
+
     return (
             <footer className='Footer-Aspect'>
                 <div className="Footer-nav">
-        <nav>
-        <button className='Footer-a' onClick={scrollUp} > Top</button>
-        {/* <a className='Footer-a' id="home" href="cities">Cities</a>
-        <a className='Footer-a' id="about" href="newcity">New City</a> */}
+        <nav className='Footer-nav1'>
+        <button className='Footer-a Footer-top' onClick={scrollUp} > Top</button>
+        
         
         <LinkRouter to="/Cities" className="Footer-a">Cities</LinkRouter>
         <LinkRouter to="/NewCity" className="Footer-a">New City</LinkRouter>
