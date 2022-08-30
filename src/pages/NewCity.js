@@ -10,8 +10,18 @@ function NewCity(){
                 type="video/mp4" />
             </video>
             <h1 className='Cities-title'>New City</h1>
-            <Input for='NewCity' labelText='Add New City'/>
-            <Input for='NewCityImg' labelText='Add City Image URL'/>
+            <form>
+                <label>
+                <ul>
+                    <li><Input type='text' for='NewCity' labelText='Add New City: ' /></li>
+                    <li><Input type='text' for='NewCityCoutry' labelText='Add New Coutry: ' /></li>
+                    <li><Input type='text' for='NewCityImg' labelText='Add City Image URL: ' /></li>
+                    <li><Input type='number' for='NewCityPopulation' min="1000" max="100000000" labelText='Add Population: ' /></li>
+                    <li><Input type='date' for='NewCityFundation'  max="9999" labelText='Add Fundation: ' /></li>
+                </ul>
+                </label>
+            </form>
+
 
         </div>
     )

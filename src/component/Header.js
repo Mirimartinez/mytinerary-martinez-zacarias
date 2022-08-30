@@ -7,7 +7,7 @@ const pages = [
     {name: 'Home', to: '/' },
     { name: 'NewCity', to: '/NewCity' },
     { name: 'Cities', to: '/Cities' },
- 
+
 ]
 
 const link = (page) => <LinkRouter className='Header-none Header-a' to={page.to}>{page.name}</LinkRouter>
@@ -17,7 +17,7 @@ function Header() {
     const [open, setOpen] = useState(false)
 
     const handleOpenMenu = () => {
-        if(open == true) {
+        if(open === true) {
             setOpen(false)
         } else {
             setOpen(true)
@@ -25,6 +25,9 @@ function Header() {
     }
 
 
+
+
+    
     return (
         <div className='Header-cont'>
             <div id="Header-logo">
