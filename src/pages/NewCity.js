@@ -1,30 +1,33 @@
 import '../styles/Cities.css'
+import '../styles/NewCity.css'
 import Input from '../component/Input'
 
-function NewCity(){
+function NewCity() {
+
+    const datos = [
+        {key: 'City', for: 'city', type: 'text'},
+        {key: 'Country', for: 'country', type: 'text'},
+        {key: 'Population', for: 'population', type: 'number'},
+        {key: 'Photo', for: 'photo', type: 'text'},
+        {key: 'Foundation', for: 'foundation', type: 'date'},
+    ]    
     return(
-        <div className='Cities'>
-            <video id='videoCities' autoPlay loop muted>
-                <source
-                src="http://localhost:3000/video.mp4"
-                type="video/mp4" />
+        <div className='NewCity'>
+        <video id='videoNewCity' autoPlay loop muted>
+            <source
+            src="http://localhost:3000/videoHero.mp4"
+            type="video/mp4" />
             </video>
-            <h1 className='Cities-title'>New City</h1>
-            <form>
-                <label>
-                <ul>
-                    <li><Input type='text' for='NewCity' labelText='Add New City: ' /></li>
-                    <li><Input type='text' for='NewCityCoutry' labelText='Add New Coutry: ' /></li>
-                    <li><Input type='text' for='NewCityImg' labelText='Add City Image URL: ' /></li>
-                    <li><Input type='number' for='NewCityPopulation' min="1000" max="100000000" labelText='Add Population: ' /></li>
-                    <li><Input type='date' for='NewCityFundation'  max="9999" labelText='Add Fundation: ' /></li>
-                </ul>
-                </label>
-            </form>
-
-
+            <h1 className='NewCity-title'>New City</h1>
+            <div className='NewCity-form'>
+                {datos.map(dato => <Input label={dato.key} for={dato.for} type={dato.type}/>)}
+            </div>
+            <div className='NewCity-textarea'>
+                <label className='NewCity-label' for="textarea">Description</label>
+                <textarea className='NewCity-input' name='textarea' id='textarea'></textarea>
+            </div>
         </div>
     )
 }
 
-export default NewCity
+export default NewCity 
