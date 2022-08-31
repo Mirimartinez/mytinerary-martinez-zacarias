@@ -1,14 +1,15 @@
+import '../styles/Input.css' 
+
 function Input(props) {
-    let name = props.name
-    let user_name = props.user_name
-    let labelText = props.labelText
+    let inputFor = props.for
+    let type = props.type
+    let label = props.label
     return(
-        <div className=''>
-                <label for={name}>{labelText}</label>
-                <input type="text" id={name} name={user_name}></input>
+        <div className='Input-form'>
+                <label className='Input-label' for={inputFor}>{label}</label>
+                <input className='Input-input' type={type} id={inputFor} name={inputFor}></input>
+        </div>
+        )
 
-    </div>
-    )
-
-}
+    }
 export default Input
