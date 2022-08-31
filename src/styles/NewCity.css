@@ -1,0 +1,42 @@
+.NewCity{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40% 80%;
+    margin-top: -6.2rem;
+}
+#videoNewCity{
+    position: fixed;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;  
+    filter: brightness(0.4);
+}
+.NewCity-title{
+    color: rgb(40, 93, 111);
+    font-size: 4rem;
+    font-family: 'IM Fell French Canon';
+    text-shadow: 3px 3px 3px white;
+    margin: 5rem 0 -.5rem 0;
+} 
+.NewCity-label{
+    font-size: 1.2rem;
+    color: white;
+    font-family: 'IM Fell French Canon';
+    text-shadow: 2px 2px 2px rgb(40, 93, 111);
+}
+.NewCity-textarea{
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+}
+.NewCity-input{
+    resize: none;
+    border-radius: .4rem;
+    height: 2.5rem;
+} 
