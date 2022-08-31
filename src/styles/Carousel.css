@@ -23,8 +23,10 @@
     /* border: 1px solid rgb(64, 43, 10)s; */
     border-radius: 15px;
     background-color: rgb(64, 43, 10);
+    margin: 0.1rem;
+}
 
-  }
+  
   
   .title {
     display: flex;
@@ -43,6 +45,15 @@
     border-radius: 8px;
     padding: .2rem .4rem .2rem .4rem;
 
+  }
+
+  .titleeh2{
+    display: flex;
+    width: 100%;
+    margin-top: 20rem;
+    color: white;
+    background-color: rgb(104, 132, 150);
+    justify-content: center;
   }
 
   /* .move {

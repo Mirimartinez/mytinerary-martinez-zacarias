@@ -1,19 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Satisfy&display=swap');
-.Footer-Aspect{
+/* .Footer-Aspect{
     background: linear-gradient(50deg,rgb(104, 132, 150),#fff,rgb(104, 132, 150));
     color: white;
     display: flex;
     flex-wrap: wrap;
     min-height: 15vh;
     padding: 0 3rem;
-}
+} */
 
 .Footer-nav{
-    width: 100%;
-    display: inline-flex;
+    background: linear-gradient(50deg,rgb(104, 132, 150),#fff,rgb(104, 132, 150));
+    color: white;
+    display: flex;
     flex-wrap: wrap;
+    min-height: 15vh;
+    width: 100%;
     justify-content: space-between;
-    margin-left: 10rem;
+}
+
+
+.Footer-nav1{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
 }
 .Fotter-Logo{
     display: flex;
@@ -28,7 +37,6 @@
     font-family: sans-serif;
     font-size: 15px;
     position: relative;
-    left: 3rem;
     margin-top: -1rem;
 }
 
@@ -37,6 +45,7 @@
     width: 33%;
     flex-wrap: wrap;
     font-family: 'IM Fell French Canon', serif;
+    justify-content: center;
 }
 
 .Footer-Parrafo{
@@ -48,6 +57,7 @@
     font-size: 2.5rem;
     position: relative;
     left: 8rem;
+    justify-content: center;
 }
 
 .Footer-a{
@@ -76,9 +86,13 @@
 
 }
 
+
 .Footer-scroolUp{
-    z-index: 5;
+    font-size: 1rem;
+
 }
+
+
 
 @media (max-width:768px){
 
@@ -96,22 +110,25 @@
         width: 34%;
         display: flex;
         flex-wrap: wrap;
-        color: white;
+        color: rgb(40, 93, 111);;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 2rem;
         justify-content:center;
         align-items: center;
         text-align: center;
+        left: 0.1rem;
     }
 
     .Fotter-LogoyCopy{
         display: flex;
         flex-direction: column;
+        justify-content: center;
         width: 33%;
         flex-wrap: wrap;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         justify-content:space-between ;
         text-align: center;
+        align-items: center;
     }
 
     .Footer-Link{
@@ -122,7 +139,48 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         justify-content: center;
         font-size:12px;
-    }
-}
 
+
+
+
+    }
+
+
+
+
+    .Footer-nav{
+        background: linear-gradient(50deg,rgb(104, 132, 150),#fff,rgb(104, 132, 150));
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 15vh;
+        padding: 0 3rem;
+    
+        width: 100%;
+        /* display: inline-flex; */
+        justify-content: space-between;
+        /* margin-left: 10rem; */
+        flex-direction: column;
+    align-items: center;
+    }
+
+    .Footer-copy{
+        color: rgb(40, 93, 111);
+        font-family: sans-serif;
+        font-size: 15px;
+        position: relative;
+        left: 0rem;
+        margin-top: -1rem;
+    }
+
+    .Fotter-Logo{
+        display: flex;
+        width: 175px;
+        height: 175px;
+        position: relative;
+        left: 0rem;
+    }
+
+
+}
 
