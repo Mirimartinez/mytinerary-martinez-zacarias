@@ -1,0 +1,16 @@
+.Input-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: .7rem;
+}
+.Input-label{
+    font-size: 1.2rem;
+    color: white;
+    font-family: 'IM Fell French Canon';
+    text-shadow: 2px 2px 2px rgb(40, 93, 111);
+    margin-bottom: .2rem;
+}
+.Input-input{
+    border-radius: .4rem;
+    height: 1.5rem;
+} 
