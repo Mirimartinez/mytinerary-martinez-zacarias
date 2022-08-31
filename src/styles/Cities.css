@@ -3,12 +3,8 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-
     min-height: 80vh;
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 40% 80%;
+    background-color: rgba(0, 58, 77, 0.315);
     flex-direction: column;
 }
 #videoCities{

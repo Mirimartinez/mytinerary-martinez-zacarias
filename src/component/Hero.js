@@ -10,9 +10,9 @@ function Hero() {
           type="video/mp4"
         />
       </video>
-      {/* <h1 className='Hero-title'>MyTinerary</h1> */}
       <p className='Hero-subtitle'>Find your perfect trip, designed by insiders who know and love their cities!</p>
       <CallToAction  linkTo='Cities' buttonText='Ready to see what we got for you?' />
+      <h1 className='Hero-title'>MyTinerary</h1>
       {/* <button className='Hero-button' type="submit">Ready to see what we got for you?</button> */}
     </div>
   );

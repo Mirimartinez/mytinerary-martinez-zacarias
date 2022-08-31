@@ -7,7 +7,11 @@
     min-height: 15vh;
     padding: 0 3rem;
 } */
-
+.Footer-Aspect{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .Footer-nav{
     background: linear-gradient(50deg,rgb(104, 132, 150),#fff,rgb(104, 132, 150));
     color: white;
@@ -15,7 +19,7 @@
     flex-wrap: wrap;
     min-height: 15vh;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 
@@ -31,13 +35,14 @@
     position: relative;
     left: 2rem;
 }
-
+.Footer-Thanks{
+    padding-left: 2rem;
+}
 .Footer-copy{
+    display: flex;
     color: rgb(40, 93, 111);
     font-family: sans-serif;
     font-size: 15px;
-    position: relative;
-    margin-top: -1rem;
 }
 
 .Fotter-LogoyCopy{
@@ -165,6 +170,7 @@
     }
 
     .Footer-copy{
+        display: flex;
         color: rgb(40, 93, 111);
         font-family: sans-serif;
         font-size: 15px;

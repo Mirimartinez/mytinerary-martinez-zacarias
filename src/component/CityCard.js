@@ -1,4 +1,4 @@
-export default function CityCard(props) {
+function CityCard(props) {
     let city = props.city
     return(
         <div className='CityCard'>
@@ -11,3 +11,5 @@ export default function CityCard(props) {
     )
 
 }
+
+export default CityCard
