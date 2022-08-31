@@ -2,6 +2,7 @@
 import { func } from 'prop-types' */
 /* import { clearInterval } from 'timers' */
 import '../styles/Carousel.css'
+import '../styles/CityCard.css'
 import Arrow from './Carousel/Arrow'
 import {useEffect,useState,} from 'react'
 
@@ -21,11 +22,10 @@ function Carousel(props) {
 console.log(start)
 
     const itemView = (item) => (
-        <div className='card item '>
-            <img className='ImageCity' alt='/* event.name */' src={item.url} />
-            <p className='move'></p>
-            <p className='title'>{item.title}</p>           
-            
+        <div className='CityCard'>
+        <img className='CityCard-Image' alt={item.title} src={item.url} />
+        <h3 className='CityCard-title'>{item.title}</h3>           
+        <h3 className='CityCard-subtitle'>{item.subtitle}</h3>
         </div>
     )
 
