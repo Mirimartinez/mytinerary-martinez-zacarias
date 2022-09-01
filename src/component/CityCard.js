@@ -1,22 +1,18 @@
-
 import '../styles/CityCard.css'
+import {Link as LinkRouter} from 'react-router-dom'
 
 function CityCard(props) {
     let city = props.city
-    const country= props.country
-    const photo =   props.photo
-    const population = props.population
-    const fundation = props.fundation
-
-
+    let country= props.country
+    const photo = props.photo
     return(
+        <LinkRouter to='/CityDetails'>
         <div className='CityCard'>
-            <h1 className=''>{city}</h1>
-            <img className='CityCard-Image' alt={city} src={photo} />
-            <h3 className=''>{country}</h3>
-            <p className=''>The current population of {city} in 2022 is{population}.</p>
-            <p>It was founded in {fundation}</p>    
+        <img className='CityCard-Image' alt={city} src={photo} />
+        <h3 className='CityCard-title'>{city}</h3>           
+        <h3 className='CityCard-subtitle'>{country}</h3> 
         </div>
+        </LinkRouter>
     )
 }
 
