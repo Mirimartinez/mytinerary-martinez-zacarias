@@ -1,15 +1,27 @@
+
+import '../styles/CityCard.css'
+
 function CityCard(props) {
     let city = props.city
+ const country= props.country
+
+     const photo =   props.photo
+       const population = props.population
+        const fundation = props.fundation
+
+
     return(
         <div className='CityCard'>
-        <img className='CityCard-Image' alt={city.title} src={city.url} />
-        <h3 className='CityCard-title'>{city.title}</h3>           
-        <h3 className='CityCard-subtitle'>{city.subtitle}</h3>           
-
         
-    </div>
+  
+            <h1 className=''>{city}</h1>
+            <img className='CityCard-Image' alt={city} src={photo} />
+            <h3 className=''>{country}</h3>
+            <p className=''>The current population of {city} in 2022 is{population}.</p>
+            <p>It was founded in {fundation}</p>
+                    
+        </div>
     )
-
 }
 
 export default CityCard
