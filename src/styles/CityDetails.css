@@ -1,0 +1,44 @@
+.CityDetails-cont{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: rgba(0, 58, 77, 0.315);
+    flex-direction: column;
+}
+.CityDetails-img{
+    height: 25rem;
+    border-radius: 15px;
+    margin-bottom: 5rem;
+}
+.CityDetails-h1{
+    font-size: 3.5rem;
+    color:rgb(40, 93, 111);
+    font-family: 'IM Fell French Canon';
+    text-shadow: 2px 2px 2px white
+}
+.CityDetails-h3{
+    font-size: 2rem;
+    color:rgba(40, 93, 111);
+    font-family: 'IM Fell French Canon';
+    text-shadow: 2px 2px 2px white;
+    margin: -2.5rem 0 2rem 10rem  ;
+}
+.CityDetails-cont2{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    background-color: rgba(0, 58, 77, 0.25);
+    flex-direction: column;
+    margin-bottom: 4rem;
+    padding: 5rem 0;
+    border-radius: 50px;
+}
+.CityDetails-text{
+    font-size: 1.25rem;
+    margin: 1rem 8rem;
+    line-height: 30px;
+}
