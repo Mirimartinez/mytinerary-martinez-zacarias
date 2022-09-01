@@ -60,7 +60,13 @@
     height: 100%;
     border-radius: 15px;
 }
-
+.CityCard-text{
+  display: flex;
+  justify-content: flex-start;
+  margin-left: rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
 .CityCard:hover .CityCard-title{
     transform: scale(2.0);
     color: rgb(40, 93, 111);
