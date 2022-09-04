@@ -1,4 +1,5 @@
 import '../styles/CityDetails.css'
+import {Link as LinkRouter} from 'react-router-dom'
 
 function CityDetails(props){
     let city = props.city
@@ -12,6 +13,10 @@ function CityDetails(props){
         <div className='CityDetails-cont'>
             <h1 className='CityDetails-h1'>Tokyo</h1>
             <h3 className='CityDetails-h3'>Japan</h3>
+            <span className='CityDetails-goback'>
+            <a className='CD-gb' href="javascript:history.back()">Go Back</a>
+
+            </span>
             <img className='CityDetails-img' alt={city} src='https://img.freepik.com/foto-gratis/flores-cerezo-primavera-pagoda-chureito-montana-fuji-al-atardecer-japon_335224-215.jpg?w=996&t=st=1661108709~exp=1661109309~hmac=2658b5c5a8992591a5e183f01a8590196c77bff9ccf4138f5181cc669f67a377' />
             <div className='CityDetails-cont2'>
             <p className='CityDetails-text'>The current population of Tokyo in 2022 is 13988129.</p>
