@@ -9,6 +9,7 @@ import EditCity from './EditCity'
 import UnderConstruction from './UnderConstruction'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ScrollToTop from '../component/ScrollToTop'
+import EditCity from './EditCity'
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
     <Route  path='/' element={<Home/>} />
     <Route path='/Cities' element={<Cities/>} /> 
     <Route path='/NewCity' element={<NewCity/>} />
+    <Route path='/EditCity' element={<EditCity/>} />
 
     <Route path='/CityDetails' element={<CityDetails/>}/>
     <Route path='*' element={<UnderConstruction />} />
