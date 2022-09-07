@@ -13,11 +13,13 @@
 }
 
 #video{
+
     position: fixed;
     z-index: -1;
     min-width: 100%;
     min-height: 100%;  
     filter: brightness(0.4);
+
 }
 .Hero-title{
   color: #fff;

@@ -8,7 +8,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 40% 80%;
+
     margin-top: -5rem;
+
+    margin-top: -6.2rem;
+
 }
 #videoNewCity{
     position: fixed;
@@ -41,3 +45,4 @@
     height: 2.5rem;
     width: 14rem;
 } 
+

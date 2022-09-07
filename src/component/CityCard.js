@@ -8,12 +8,16 @@ function CityCard(props) {
     return(
         <LinkRouter to='/CityDetails'>
         <div className='CityCard'>
+
         <img className='CityCard-Image' alt={city} src={photo} />
         <h3 className='CityCard-title'>{city}</h3>           
         <h3 className='CityCard-subtitle'>{country}</h3> 
         </div>
         </LinkRouter>
+
     )
 }
 
+
 export default CityCard
+
