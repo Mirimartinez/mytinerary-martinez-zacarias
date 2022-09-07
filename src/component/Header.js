@@ -7,7 +7,7 @@ const pages = [
     {name: 'Home', to: '/' },
     { name: 'NewCity', to: '/NewCity' },
     { name: 'Cities', to: '/Cities' },
- 
+
 ]
 
 const link = (page) => <LinkRouter className='Header-none Header-a' to={page.to}>{page.name}</LinkRouter>
@@ -17,7 +17,7 @@ function Header() {
     const [open, setOpen] = useState(false)
 
     const handleOpenMenu = () => {
-        if(open == true) {
+        if(open === true) {
             setOpen(false)
         } else {
             setOpen(true)
@@ -25,24 +25,27 @@ function Header() {
     }
 
 
+
+
+    
     return (
         <div className='Header-cont'>
             <div id="Header-logo">
             <img className="Header-logo" src="http://localhost:3000/logo.png" alt="logo"/>
             </div>
             <div id="Header-title" className="Header-color">
-            <h1 className="h1">MyTinerary</h1>
+            <h1 className="Header-title">MyTinerary</h1>
             </div>
-                <img className='Header-profile' alt='profile' src="https://media0.giphy.com/media/kcZlnhiaB1p76tKS6S/giphy.gif?cid=790b7611658a2c1837a6b243c6e5b7c5f9203dcba641b933&rid=giphy.gif&ct=s" />
             <div> 
+                <img className='Header-profile' alt='profile' src="https://media0.giphy.com/media/kcZlnhiaB1p76tKS6S/giphy.gif?cid=790b7611658a2c1837a6b243c6e5b7c5f9203dcba641b933&rid=giphy.gif&ct=s" />
                 <nav className='Header-nav' > 
                 {
                     open
-                        ? <ul>
+                    ? <ul>
                             {pages.map(menu)}
                         </ul>
                         : null
-                }
+                    }
                 </nav>
             {pages.map(link)}
             <button className="Header-nav Header-a" onClick={handleOpenMenu}>Menu</button>

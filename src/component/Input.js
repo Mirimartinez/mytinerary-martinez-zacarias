@@ -1,8 +1,10 @@
 import '../styles/Input.css' 
+
 function Input(props) {
     let inputFor = props.for
     let type = props.type
     let label = props.label
+
 
 
     return(
