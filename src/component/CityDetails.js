@@ -34,6 +34,7 @@ function CityDetails(){
         <p className='CityDetails-text'>The current population of {city.city} in 2022 is {city.population}.</p>
         <p className='CityDetails-text'>It was founded in {city.fundation}.</p>
         <p className='CityDetails-text'>{city.description}.</p>
+
         </div>
         )
     }

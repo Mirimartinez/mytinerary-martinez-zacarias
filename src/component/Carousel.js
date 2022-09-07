@@ -31,6 +31,7 @@ console.log(start)
             <h3 className='CityCard-subtitle'>{item.subtitle}</h3>
             </div>
         </LinkRouter>
+
     )
 
 
