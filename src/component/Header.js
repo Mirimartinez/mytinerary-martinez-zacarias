@@ -5,8 +5,9 @@ import '../styles/Header.css'
 
 const pages = [
     {name: 'Home', to: '/' },
-    { name: 'NewCity', to: '/NewCity' },
     { name: 'Cities', to: '/Cities' },
+    { name: 'NewCity', to: '/NewCity' },
+    { name: 'Edit City', to: '/EditCity' },
 
 ]
 
