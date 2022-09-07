@@ -18,6 +18,7 @@ import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 })
 
 
+
 export default citiesAPI
 export const {useGetAllCitiesQuery} = citiesAPI
 
