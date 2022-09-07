@@ -1,6 +1,7 @@
 import Carousel from "../component/Carousel";
 import axios from 'axios'
 import { useEffect,useState } from 'react'
+import {useGetAllCitiesQuery} from'../features/citiesApi'
 
 function EventsCarousel(){
 
@@ -20,7 +21,7 @@ function EventsCarousel(){
     ] */
 
 
-     const [cities, setCities] = useState([])
+    /*  const [cities, setCities] = useState([])
      console.log(useState)
     useEffect(() =>{
         
@@ -28,10 +29,22 @@ function EventsCarousel(){
         
         .then(res => setCities(res.data.response))
         console.log(setCities)
-    },[])
+    },[]) */
+
+    const{
+        data : cities,
+        error,
+        isLoading,
+        isSuccess,
+        isFailed
+
+        
+    } = useGetAllCitiesQuery()
+    
+    console.log(cities)
     
     return(
-        <Carousel data={cities.cities} range={4} slides={3} interval={5}  />
+        <Carousel data={cities?.response.cities} range={4} slides={3} interval={5}  />
         )
         
     }
