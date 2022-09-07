@@ -14,7 +14,8 @@ function Carousel(props) {
     const [start,setStart] = useState(0)
     const [end,setEnd] = useState(start + range)
     const [intervalId, setIntervalId] = useState()
-    const items = props.data
+    const cities = props.data
+    console.log(cities)
     const interval = props.interval * 1000
 
 
@@ -23,7 +24,7 @@ console.log(start)
 
     const itemView = (item) => (
         <div className='CityCard'>
-        <img className='CityCard-Image' alt={item.title} src={item.url} />
+        <img className='CityCard-Image' alt={cities.city} src={cities.photo} />
         <h3 className='CityCard-title'>{item.title}</h3>           
         <h3 className='CityCard-subtitle'>{item.subtitle}</h3>
         </div>
@@ -46,8 +47,8 @@ console.log(start)
 
         }, [start])
     
-
-
+        
+        
 
 
 
@@ -89,7 +90,7 @@ console.log("end: " + end)
         
         <div className='slide CarouselStyle'>
             <Arrow icon={'<'} click={previous} /> 
-            {items.slice(start, end).map(itemView)}
+            {cities?.slice(start, end).map(itemView)}
             <Arrow icon= {'>'} click={next} />
         </div>
         

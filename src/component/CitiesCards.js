@@ -1,7 +1,11 @@
 import CityCard from './CityCard'
 import '../styles/CityCard.css'
 import axios from 'axios'
-import { useEffect,useState } from 'react'
+import { useEffect } from 'react'
+import {useGetAllCitiesQuery} from'../features/citiesApi'
+/* import {useSelector, useDispatch} from 'react-redux'
+import {fetchFromServer} from '../features/citiesSlice' */
+
 
 
 export default function CitiesCard() {
@@ -29,6 +33,17 @@ export default function CitiesCard() {
         .then(res => setCities(res.data.response))
         console.log(cities)
     },[])
+
+ 
+    /* const{
+        data : cities,
+        error,
+        isLoading,
+        isSuccess,
+        isFailed
+
+    } = useGetAllCitiesQuery() */
+
 
     return(
         <div className='Cities-container'>

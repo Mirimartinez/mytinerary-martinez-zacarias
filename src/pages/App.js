@@ -22,10 +22,12 @@ export default function App() {
     <Route  path='/' element={<Home/>} />
     <Route path='/Cities' element={<Cities/>} /> 
     <Route path='/NewCity' element={<NewCity/>} />
+
     <Route path='/CityDetails' element={<CityDetails/>}/>
     <Route path='*' element={<UnderConstruction />} />
     
     </Routes> */}
+   
     </Layout>
     </BrowserRouter>
   )
