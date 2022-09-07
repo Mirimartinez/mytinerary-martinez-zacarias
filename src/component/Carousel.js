@@ -5,6 +5,7 @@ import '../styles/Carousel.css'
 import '../styles/CityCard.css'
 import Arrow from './Carousel/Arrow'
 import {useEffect,useState,} from 'react'
+import {Link as LinkRouter} from 'react-router-dom'
 
 
 
@@ -23,11 +24,13 @@ function Carousel(props) {
 console.log(start)
 
     const itemView = (item) => (
-        <div className='CityCard'>
-        <img className='CityCard-Image' alt={cities.city} src={cities.photo} />
-        <h3 className='CityCard-title'>{item.title}</h3>           
-        <h3 className='CityCard-subtitle'>{item.subtitle}</h3>
-        </div>
+        <LinkRouter to={`/city/${item._id}`}>
+            <div className='CityCard'>
+            <img className='CityCard-Image' alt={cities.city} src={cities.photo} />
+            <h3 className='CityCard-title'>{item.title}</h3>
+            <h3 className='CityCard-subtitle'>{item.subtitle}</h3>
+            </div>
+        </LinkRouter>
     )
 
 
