@@ -10,7 +10,6 @@ import UnderConstruction from './UnderConstruction'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ScrollToTop from '../component/ScrollToTop'
 
-
 export default function App() {
   return (
     <BrowserRouter>
