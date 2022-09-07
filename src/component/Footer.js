@@ -25,6 +25,7 @@ function Footer() {
         
         <LinkRouter to="/Cities" className="Footer-a">Cities</LinkRouter>
         <LinkRouter to="/NewCity" className="Footer-a">New City</LinkRouter>
+        <LinkRouter to="/EditCity" className="Footer-a">Edit City</LinkRouter>
         </nav>
                 <div className='Footer-Parrafo'>
                     <p className='Footer-Thanks'><strong>Thanks for visiting!</strong></p>
