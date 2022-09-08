@@ -1,7 +1,6 @@
 
 import '../styles/Cities.css'
 import '../styles/NewCity.css'
-// import Input from '../component/Input'
 import React, { useState } from 'react'
 import axios  from 'axios'
 
@@ -29,16 +28,8 @@ function NewCity() {
         foundation: city.foundation ,
 }
 
-    //     const datos = [
-    //     {key: 'City', for: 'city', type: 'text'},
-    //     {key: 'Country', for: 'country', type: 'text'},
-    //     {key: 'Population', for: 'population', type: 'number'},
-    //     {key: 'Photo', for: 'photo', type: 'text'},
-    //     {key: 'Foundation', for: 'foundation', type: 'date'},
-    // ]  
     const saveData = async(e)=>{
         e.preventDefault()
-
     await axios.post('http://localhost:4000/cities/', newCity)
             setCity({...initialValor})
         }
