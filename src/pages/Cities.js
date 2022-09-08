@@ -27,7 +27,7 @@ function Cities(){
             
 
             <div className='Cities-container'>
-            {cities?.response.cities.map(CityCard)}
+            {cities.map(CityCard)}
             </div>
 
         </div>
