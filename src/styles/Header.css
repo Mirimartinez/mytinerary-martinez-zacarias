@@ -9,6 +9,10 @@
     background-color: rgb(104, 132, 150);
 }
 
+.PagesLinks{
+    width: 5vw;
+}
+
 .Header-logo{
     height: 120px;
     width: 120px;
@@ -16,7 +20,10 @@
 }
 
 #Header-logo{
-    width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
 }
 
 .Header-a{
@@ -39,16 +46,21 @@
 
 .Header-nav{
     display: none;
+    width: 5px;
 }
 .Header-prof{
     display: flex;
     align-items: center;
 }
 .Header-profile{
-    height: 45px;
+    height: 100%;
     display: flex;
-    padding-left: 2.5rem;
-    margin-bottom: -1.4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.ImgProfile{
+    height: 40%;
 }
 
 .Header-a:hover{
@@ -70,7 +82,6 @@
     text-shadow: 10px 10px 8px rgb(40, 93, 111);
     font-size: 4rem;
     font-family: 'IM Fell French Canon', serif;
-    margin-left: -7rem;
 }
 
 

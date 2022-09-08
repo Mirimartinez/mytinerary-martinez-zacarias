@@ -1,6 +1,6 @@
 import Carousel from "../component/Carousel";
-import axios from 'axios'
-import { useEffect,useState } from 'react'
+// import axios from 'axios'
+// import { useEffect,useState } from 'react'
 import {useGetAllCitiesQuery} from'../features/citiesApi'
 
 function EventsCarousel(){
