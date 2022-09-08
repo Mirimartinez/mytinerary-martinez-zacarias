@@ -24,7 +24,6 @@ function Cities(){
         
         <div className='Cities'>
             <h1 className='Cities-title'>Cities</h1>
-            
 
             <div className='Cities-container'>
             {cities?.response.cities.map(CityCard)}
