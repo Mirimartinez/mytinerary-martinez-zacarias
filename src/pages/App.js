@@ -9,20 +9,20 @@ import EditCity from './EditCity'
 import UnderConstruction from './UnderConstruction'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ScrollToTop from '../component/ScrollToTop'
+import Mytineraries from '../pages/MyTineraries'
 
 export default function App() {
   return (
     <BrowserRouter>
     <ScrollToTop/>
       <Layout>
-    {/* <EditCity/> */}
      <Routes>
 
     <Route  path='/' element={<Home/>} />
     <Route path='/Cities' element={<Cities/>} /> 
     <Route path='/NewCity' element={<NewCity/>} />
     <Route path='/EditCity' element={<EditCity/>} />
-
+    <Route path='/MyTineraries' element={<Mytineraries/>}/>
     <Route path='/CityDetails' element={<CityDetails/>}/>
     <Route path='*' element={<UnderConstruction />} />
     
