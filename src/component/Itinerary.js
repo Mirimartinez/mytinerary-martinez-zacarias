@@ -1,6 +1,6 @@
 
 import Comment from './Comment'
-import Activity from './Activity'
+import Activities from './Activities'
 import '../styles/Itinerary.css'
 import {useState} from "react"
 
@@ -47,7 +47,7 @@ function Itinerary(props){
                 <p>Duration: {item.duration}</p>
             </div>
             <div>
-            <Activity/>
+            <Activities/>
             {
             open
                 ?
