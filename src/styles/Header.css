@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Satisfy&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .Header-cont{
     width: 100%;
     height: 20vh;
-    display: inline-flex;
-    flex-wrap: wrap;
+    display: flex;
+    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     background-color: rgb(104, 132, 150);
 }
@@ -84,9 +90,26 @@
     font-family: 'IM Fell French Canon', serif;
 }
 
+@media (max-width: 1024px){
+    .PagesLinks{
+        width: 10vw;
+    }
+}
+
 
 @media (max-width:900px){
-.Header-title{
+
+    .Header-cont{
+        width: 100%;
+        min-height: 20vh;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgb(104, 132, 150);
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .Header-title{
         color: #fff;
         text-shadow: 10px 10px 8px rgb(40, 93, 111);
         font-size: 2.5rem;
@@ -95,47 +118,69 @@
 
 
     .Header-nav{
+        width: 36%;
+        min-height: 30vh;
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-   .Header-none {
+    .Header-a{
+        width: 15vw;
+    }
+
+    .PagesLinks {
         display: none;
     }
 
-    .Header-logo{
+    /* .Header-logo{
         height: 100px;
         width: 100px;
         position: relative;
         bottom: .5rem;
+    } */
+
+    #Header-logo{
+        width: 36%;
+        height: 100%;
     }
+
+
     .Header-profile{
-        height: 60px;
+        width: 36%;
     }
-    .Header-a:hover{
-        background-color: rgb(40, 93, 111);
-        color: antiquewhite;
-        border: 2px solid antiquewhite;
-        position: relative;
-        left: 8vw;
-        width: 24vw;
-        margin-top: -.5rem;
-    }
-.Header-cont{
-    width: 100%;
-    min-height: 20vh;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: rgb(104, 132, 150);
-    /* position: fixed; */
-    flex-direction: column;
-    align-items: center;
-}
+
 
 }
 
 @media (max-width:650px) {
     .Header-logo{
         height: 4rem;
+    }
+
+    .Header-title{
+        font-size: 2rem;
+    }
+
+    .ImgProfile{
+        height: 30%;
+    }
+
+    .Header-logo{
+        display: none;
+    }
+
+    .Header-nav{
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 320px){
+    .ImgProfile{
+        height: 25%;
+    }
+
+    .Header-title{
+        font-size: 1.5rem;
     }
 }
