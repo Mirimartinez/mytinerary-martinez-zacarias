@@ -26,9 +26,9 @@ console.log(start)
     const itemView = (item) => (
         <LinkRouter to={`/city/${item._id}`}>
             <div className='CityCard'>
-            <img className='CityCard-Image' alt={cities.city} src={cities.photo} />
-            <h3 className='CityCard-title'>{item.title}</h3>
-            <h3 className='CityCard-subtitle'>{item.subtitle}</h3>
+            <img className='CityCard-Image' alt={item.city} src={item.photo} />
+            <h3 className='CityCard-title'>{item.country}</h3>
+            <h3 className='CityCard-subtitle'>{item.city}</h3>
             </div>
         </LinkRouter>
 
