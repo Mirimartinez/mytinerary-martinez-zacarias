@@ -47,21 +47,24 @@ function Itinerary(props){
                 <p>Duration: {item.duration}</p>
             </div>
             <div>
+            <div className='Itinerary-activities'>
             <Activities/>
+            </div>
             {
             open
                 ?
                 <div className='Itinerary-comment'>
             <Comment/>
             </div>
-             :null
+            :null
         }
         </div>
-        <button  onClick={handleOpenMenu}>comments</button>
+        <button className='Itinerary-button' onClick={handleOpenMenu}>comments</button>
             </div>
         )
     }
 
+    
 
     return(
         <>
@@ -69,7 +72,7 @@ function Itinerary(props){
         </>
     )
     }
-    
+
 
 
 
