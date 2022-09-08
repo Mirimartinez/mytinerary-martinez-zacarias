@@ -26,7 +26,9 @@ function Cities(){
             <h1 className='Cities-title'>Cities</h1>
             <InputSearch />
             <div className='Cities-container'>
-            {cities?.map(CityCard)}
+
+            {cities.map(CityCard)}
+
             </div>
 
         </div>
