@@ -17,15 +17,15 @@ function Carousel(props) {
     const [intervalId, setIntervalId] = useState()
     const cities = props.data
     const interval = props.interval * 1000
-    let id = props._id
+    //let id = props.data
 
 
 
-console.log(id)
+//console.log(id)
 
 
     const itemView = (item) => (
-        <LinkRouter to={`/cities/${id}`}>
+        <LinkRouter to={`/cities/${item._id}`}>
 
             <div className='CityCard'>
                 <img className='CityCard-Image' alt={item.city} src={item.photo} />
