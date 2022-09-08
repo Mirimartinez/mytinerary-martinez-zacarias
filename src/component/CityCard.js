@@ -20,4 +20,3 @@ function CityCard(props) {
 
 
 export default CityCard
-

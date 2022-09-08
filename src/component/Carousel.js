@@ -23,16 +23,19 @@ function Carousel(props) {
 
 console.log(id)
 
-const itemView = (item) => (
-    
-            <LinkRouter to={`/city/${id}`}>
+
+    const itemView = (item) => (
+        <LinkRouter to={`/cities/${id}`}>
+
             <div className='CityCard'>
-            <img className='CityCard-Image' alt={item.city} src={item.photo} />
-            <h3 className='CityCard-title'>{item.country}</h3>
-            <h3 className='CityCard-subtitle'>{item.city}</h3>
+                <img className='CityCard-Image' alt={item.city} src={item.photo} />
+                <h3 className='CityCard-title'>{item.city}</h3>
+                <h3 className='CityCard-subtitle'>{item.country}</h3>
             </div>
+
             </LinkRouter>
         
+
 
     )
 
@@ -94,6 +97,7 @@ function next (){
 
     return (
         <div className='carouselButoom'>
+
         
         <div className='slide CarouselStyle'>
             <Arrow icon={'<'} click={previous} /> 
@@ -102,6 +106,7 @@ function next (){
         </div>
         
     </div>
+
     )
 }
 
