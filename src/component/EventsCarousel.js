@@ -44,7 +44,7 @@ function EventsCarousel(){
     console.log(cities)
     
     return(
-        <Carousel data={cities?.response.cities} range={4} slides={3} interval={5}  />
+        <Carousel data={cities} range={4} slides={3} interval={5}  />
         )
         
     }
