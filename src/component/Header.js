@@ -34,17 +34,17 @@ function Header() {
             <div className='PagesLinks'>
                 {pages.map(link)}
             </div>
-            <div  className='Header-nav' > 
-                <nav> 
-                {
-                    open
-                    ? <ul>
-                        {pages.map(menu)}
-                    </ul>
-                    : null
+                <div  className='Header-nav' >
+                    <nav>
+                    {
+                        open
+                        ? <ul>
+                            {pages.map(menu)}
+                        </ul>
+                        : null
                     }
-                </nav>
-                <button className="Header-a" onClick={handleOpenMenu}>Menu</button>
+                    </nav>
+                    <button className="Header-a" onClick={handleOpenMenu}>Menu</button>
             </div>
             <div id="Header-logo">
                 <img className="Header-logo" src="http://localhost:3000/logo.png" alt="logo"/>

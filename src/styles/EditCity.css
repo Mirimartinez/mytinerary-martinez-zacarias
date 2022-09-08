@@ -1,4 +1,4 @@
-.EditCity{
+.InputSelectImgContainer{
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -12,7 +12,7 @@
 }
 
 
-#videoEditCity{
+#videoNewCity{
     position: fixed;
     z-index: -1;
     min-width: 100vw;
@@ -55,19 +55,34 @@
 
 .EditSelect{
     width: 14rem;
+    padding: 10px;
+    border-radius: 10px;
+
 }
 
 
 .EditCityH1{
     text-align: center;
     color: rgb(40, 93, 111);
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: 'IM Fell French Canon';
     text-shadow: 3px 3px 3px white;
+    margin-top: 5rem;
 }
 
 .InputSelectContainer{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 2rem;
+}
+
+form{
+    margin: 0;
+}
+
+@media (max-width: 426px) {
+    .EditCityH1{
+        font-size: 3.5rem;
+    }
 }
