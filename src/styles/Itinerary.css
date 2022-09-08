@@ -34,40 +34,38 @@
     gap: 20px;
 
 
+
 }
 
 .Itinerary-comment{
     width: 100%;
-}
-
-
-.Activity-card{
-    flex-direction: column;
-    width: 95%;
-    min-height: 2rem;
-    
-    position: relative;
-    box-shadow: 15px 15px 50px #adb5bd75;
-    text-align: center;
-    transition: all 0.3s ease-in;
-    border-radius: 15px;
-    box-shadow: 10px 10px 11px 1px rgba(0,0,0,0.58);
-    background: linear-gradient(45deg,#7EE8FA,#EEC0C6);
-    margin: 1rem;
-}
-
-.Activity-title{
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    transition: all 0.4s ease-in;
-    height: 5%;
-    font-size: 20px;
-    margin-bottom: 2px;
-    color: rgb(109, 80, 217);
-    bottom:calc(350px / 8);
-    font-family: 'IM Fell French Canon', serif;
-    border-radius: 7px;
-    padding: .2rem .4rem .2rem .4rem;
-    gap: 30px;
+    
+    
+
+}
+
+
+
+
+
+.Itinerary-button{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.Itinerary-activities{
+
+    display: flex;
+    justify-content: space-around;
 }

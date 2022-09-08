@@ -5,9 +5,22 @@ function Comment(props){
 
     const comments = [
         {
-            name:'manolo smith',
+            name:'Manolo Smith',
             user:'Smith_20',
-            comment:'very beautiful city, recommended'
+            comment:'very beautiful city totally recommended, I hope to return again'
+            
+        },
+
+        {
+            name:'Alex Tower',
+            user:'TTMaster',
+            comment:'a totally recommendable experience, I had a lot of fun'
+            
+        },
+        {
+            name:'Sara Arrow',
+            user:'Destiny_12',
+            comment:'I am very happy to have lived a totally pleasant experience, I leave satisfied'
             
         }
     ]
@@ -22,7 +35,7 @@ function Comment(props){
                 <p>User: {item.user}</p>
             </div>
             <div>
-                <p>comment: {item.comment}</p>
+                <p> "{item.comment}"</p>
             </div>
             </div>
         )
