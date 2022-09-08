@@ -7,8 +7,6 @@ function Home() {
         <>
             <Hero />
             <Eventspopulars />
-
-           
         </>
     )
 }
