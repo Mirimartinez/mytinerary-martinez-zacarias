@@ -2,8 +2,12 @@
 import { func } from 'prop-types' */
 /* import { clearInterval } from 'timers' */
 import '../styles/Carousel.css'
+import '../styles/CityCard.css'
 import Arrow from './Carousel/Arrow'
 import {useEffect,useState,} from 'react'
+import {Link as LinkRouter} from 'react-router-dom'
+
+
 
 function Carousel(props) {
     const range = props.range
@@ -11,20 +15,26 @@ function Carousel(props) {
     const [start,setStart] = useState(0)
     const [end,setEnd] = useState(start + range)
     const [intervalId, setIntervalId] = useState()
-    const items = props.data
+    const cities = props.data
+    console.log(cities)
     const interval = props.interval * 1000
 
-    console.log(start)
 
+
+console.log(start)
 
     const itemView = (item) => (
-        <div className='card item '>
-            <img className='ImageCity' alt='/* event.name */' src={item.url} />
-            <p className='move'></p>
-            <p className='title'>{item.title}</p>           
-            
-        </div>
+        <LinkRouter to={`/city/${item._id}`}>
+            <div className='CityCard'>
+            <img className='CityCard-Image' alt={item.city} src={item.photo} />
+            <h3 className='CityCard-title'>{item.country}</h3>
+            <h3 className='CityCard-subtitle'>{item.city}</h3>
+            </div>
+        </LinkRouter>
+
     )
+
+
 
 
     useEffect(() =>{
@@ -33,12 +43,18 @@ function Carousel(props) {
         }, interval)
 
 
+
+
         setIntervalId(id)
 
         return() => clearInterval(id);
 
         }, [start])
     
+        
+        
+
+
 
     function previous( ) {
         if(start >= range){
@@ -50,6 +66,7 @@ function Carousel(props) {
         }
         clearInterval(intervalId)
 }
+
 
 
 function next (){
@@ -77,7 +94,7 @@ console.log("end: " + end)
         
         <div className='slide CarouselStyle'>
             <Arrow icon={'<'} click={previous} /> 
-            {items.slice(start, end).map(itemView)}
+            {cities?.slice(start, end).map(itemView)}
             <Arrow icon= {'>'} click={next} />
         </div>
         

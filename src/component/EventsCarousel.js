@@ -1,8 +1,11 @@
 import Carousel from "../component/Carousel";
+// import axios from 'axios'
+// import { useEffect,useState } from 'react'
+import {useGetAllCitiesQuery} from'../features/citiesApi'
 
 function EventsCarousel(){
 
-    const items = [
+   /*  const items = [
         { url: "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", title: "New York"},
         { url: "https://img.freepik.com/foto-gratis/flores-cerezo-primavera-pagoda-chureito-montana-fuji-al-atardecer-japon_335224-215.jpg?w=996&t=st=1661108709~exp=1661109309~hmac=2658b5c5a8992591a5e183f01a8590196c77bff9ccf4138f5181cc669f67a377", title: "Tokyo"},
         { url: "https://cdn.pixabay.com/photo/2019/01/24/09/38/madrid-3952068_960_720.jpg", title: "Madrid"},
@@ -15,13 +18,35 @@ function EventsCarousel(){
         { url: "https://images.pexels.com/photos/11013903/pexels-photo-11013903.jpeg", title: "Buenos Aires"},
         { url: "https://cdn.pixabay.com/photo/2020/09/16/04/02/skyline-5575251_960_720.jpg", title: "Dubai"},
         { url: "https://images.pexels.com/photos/2321188/pexels-photo-2321188.jpeg?", title: "Hong Kong"},
-    ]
+    ] */
 
+
+    /*  const [cities, setCities] = useState([])
+     console.log(useState)
+    useEffect(() =>{
+        
+        axios.get('http://localhost:4000/cities')
+        
+        .then(res => setCities(res.data.response))
+        console.log(setCities)
+    },[]) */
+
+    const{
+        data : cities,
+        error,
+        isLoading,
+        isSuccess,
+        isFailed
+
+        
+    } = useGetAllCitiesQuery()
+    
+    console.log(cities)
+    
     return(
-        <Carousel data={items} range={4} slides={3} interval={5}  />
-    )
-
-
-}
+        <Carousel data={cities} range={4} slides={3} interval={5}  />
+        )
+        
+    }
 
 export default EventsCarousel

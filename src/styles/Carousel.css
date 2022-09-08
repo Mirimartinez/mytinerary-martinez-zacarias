@@ -9,7 +9,7 @@
     margin: 7rem 0;
 }
 
-.card {
+.CityCard {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -23,9 +23,8 @@
     /* border: 1px solid rgb(64, 43, 10)s; */
     border-radius: 15px;
     background-color: rgb(64, 43, 10);
-
-  }
-  
+    margin: 0.1rem;
+}
   .title {
     display: flex;
     justify-content: center;
@@ -44,19 +43,27 @@
     padding: .2rem .4rem .2rem .4rem;
 
   }
-
-  /* .move {
-    transform: translateY(2200%);
+  .Popular-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .titleeh2{
+    display: flex;
+    margin: 2rem 0 -2rem 0;
+    color: white;
+    background-color: rgb(40, 93, 111);
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-family: 'IM Fell French Canon';
+    padding: 1rem;
+    border-radius: 15px;
+  }
+  .Popular-CarouContainer{
     display: flex;
     justify-content: space-around;
-    width: 100%;
-    height: 1%;
-    opacity: 0;
-    transition: transform 1s ease, opacity 1s ease;
-    margin: 0;
-    
-} */
-
+  }
 .ImageCity{
     width: 100%;
     height: 100%;
@@ -67,9 +74,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  
-
 }
 
 .buttom{
@@ -79,16 +83,7 @@
   border-radius: 360%;
 
 }
-
-  /* .card:hover {
-    cursor: pointer;
-    box-shadow: none;
-    background-color: rgba(110, 255, 113, 0.319);
-    box-shadow: 0 8px 50px #23232333;
-    
-  } */
-  
-  .card:hover .title{
+.card:hover .title{
     transform: scale(2.0);
     color: rgb(40, 93, 111);
     font-weight: 600;
@@ -101,7 +96,6 @@
     height: 0;
     background: rgb(64, 43, 10);
     position: absolute;
- 
         /* Or Top */
     transition: 0.4s ease-in-out;
     z-index: 0;
@@ -120,9 +114,18 @@
     opacity: 1;
 }
 
-
-
-
+@media (min-width: 769px) and (max-width: 1440px){
+  .CityCard{
+    margin: 150rem ;
+  }
+ 
+}
+ @media (max-width: 768px){
+  .titleeh2{
+    font-size: 1.5rem;
+  
+    }
+ }
 
 
 

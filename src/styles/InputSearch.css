@@ -1,0 +1,18 @@
+.InputForm{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.InputSearch{
+    padding: 12px;
+    border-radius: 10px;
+    border:none
+}
+
+.InputButton{
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+}
