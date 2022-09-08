@@ -1,0 +1,42 @@
+.MyTineraries-cont{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+.MyTineraries-cont2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.MyTineraries-cont3{
+    margin: 4rem 0;
+}
+.MyTineraries-title{
+    margin:0 0 2rem 4rem;
+    font-family: 'IM Fell French Canon', serif;
+    text-decoration: underline;
+    color: rgb(40, 93, 111);
+}
+.MyTineraries-img{
+    border-radius: 360px;
+}
+.MyTineraries-text{
+    padding-left: 10rem;
+    font-size: 4rem;
+    font-family: 'IM Fell French Canon', serif;
+
+}
+.CityBackButton{
+    font-family: 'Poppins', sans-serif;
+    background-color: #EEEEEE;
+    color: #222831;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #222831;
+    font-size: 1px;
+    padding: 15px;
+    border-radius: 15px;
+    position: absolute;
+    top: 14rem;
+    left: 0;
+}

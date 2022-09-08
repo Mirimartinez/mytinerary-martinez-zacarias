@@ -1,0 +1,21 @@
+.Activities-card{
+    /* background-image: url(https://cdn.slidesharecdn.com/ss_thumbnails/presentation1-091126055432-phpapp01-thumbnail-4.jpg?cb=1659032659); */
+    width: 20rem;
+    height: 14rem;
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 10px 10px 11px 1px rgba(0,0,0,0.58);
+
+    
+}
+.Activities-text{
+    font-size: 2rem;
+    font-family: 'IM Fell French Canon', serif;
+    color: rgb(1, 2, 2);
+    font-weight: 700;
+    text-shadow: 1px 2px  white ; 
+}
+
+.Activities-teamcards{
+
+}
