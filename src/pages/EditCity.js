@@ -8,7 +8,7 @@ import Option from '../component/OptionSelect'
 function EditCity() {
     const [cities, setCities] = useState({})
     useEffect(() => {
-        axios.get("http://localhost:4000/cities/?city:id")
+        axios.get("http://localhost:4000/cities/")
         .then(response => setCities(response.data))
     }, [])
         console.log(cities);
@@ -35,7 +35,7 @@ function EditCity() {
             <div className='InputSelectContainer'>
                 <select className='EditSelect'>
                     {cities.response?.map(city =>
-                <Option cities = {city} />
+                <Option city = {city} />
                     )}
                 </select>
                 </div>

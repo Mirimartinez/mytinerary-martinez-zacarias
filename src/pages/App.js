@@ -15,22 +15,17 @@ import ScrollToTop from '../component/ScrollToTop'
 export default function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop/>
+      <ScrollToTop/>
       <Layout>
-    {/* <EditCity/> */}
-     <Routes>
-
-    <Route  path='/' element={<Home/>} />
-    <Route path='/Cities' element={<Cities/>} /> 
-    <Route path='/NewCity' element={<NewCity/>} />
-    <Route path='/EditCity' element={<EditCity/>} />
-
-    <Route path='/cities/:id' element={<City/>}/>
-    <Route path='*' element={<UnderConstruction />} />
-    
-    </Routes> 
-   
-    </Layout>
+        <Routes>
+          <Route  path='/' element={<Home/>} />
+          <Route path='/Cities' element={<Cities/>} /> 
+          <Route path='/NewCity' element={<NewCity/>} />
+          <Route path='/EditCity' element={<EditCity/>} />
+          <Route path='/cities/:id' element={<City/>}/>
+          <Route path='*' element={<UnderConstruction />} />
+        </Routes> 
+      </Layout>
     </BrowserRouter>
   )
 }
