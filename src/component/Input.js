@@ -8,7 +8,7 @@ function Input(props) {
     return(
         <div className='Input-form'>
                 <label className='Input-label' htmlFor={inputFor}>{label}</label>
-                <input className='Input-input' onChange={props.change} type={type} id={inputFor} name={inputFor}></input>
+                <input className='Input-input' onChange={props.change} type={type} id={inputFor} name={inputFor} placeholder={props.value}></input>
         </div>
     )
 }

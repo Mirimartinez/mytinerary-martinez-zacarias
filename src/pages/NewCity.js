@@ -41,9 +41,7 @@ function NewCity() {
                     <h1 className='NewCity-title'>New City</h1>
                 </div>
             <video id='videoNewCity' autoPlay loop muted>
-                <source
-                src="http://localhost:3000/videoHero.mp4"
-                type="video/mp4" />
+                <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
             </video>
             <form className='FormNewCity' onSubmit={saveData}>
                 <input
@@ -85,7 +83,7 @@ function NewCity() {
                 <input
                     type="number" 
                     className="InputNewCity"
-                    placeholder='foundation'
+                    placeholder='Foundation'
                     required
                     name="foundation" 
                     value={city.foundation}

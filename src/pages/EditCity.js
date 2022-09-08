@@ -26,18 +26,17 @@ function EditCity() {
     }
 
 
-
-        const datos = [
-        {key: 'City', for: 'city', type: 'text'},
-        {key: 'Country', for: 'country', type: 'text'},
-        {key: 'Population', for: 'population', type: 'number'},
-        {key: 'Photo', for: 'photo', type: 'text'},
-        {key: 'Foundation', for: 'foundation', type: 'date'},
-        ]
+    const datos = [
+    {key: 'City', for: 'city', type: 'text'},
+    {key: 'Country', for: 'country', type: 'text'},
+    {key: 'Population', for: 'population', type: 'number'},
+    {key: 'Photo', for: 'photo', type: 'text'},
+    {key: 'Foundation', for: 'foundation', type: 'date'},
+    ]
 
     return (
         <div className='InputSelectImgContainer'>
-                <h1 className='EditCityH1'>Edit City</h1>
+                    <h1 className='EditCityH1'>Edit City</h1>
             <video id='videoNewCity' autoPlay loop muted>
                 <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
             </video>

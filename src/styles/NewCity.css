@@ -8,11 +8,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 40% 80%;
-
     margin-top: -5rem;
-
-    margin-top: -6.2rem;
-
 }
 #videoNewCity{
     position: fixed;
@@ -44,6 +40,7 @@
     padding: 10px;
     border-radius: 10px;
     margin-top: 30px;
+    border: 2px solid rgb(40, 93, 111);
 }
 
 form{
