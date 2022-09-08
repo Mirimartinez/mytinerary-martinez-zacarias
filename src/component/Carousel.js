@@ -18,20 +18,20 @@ function Carousel(props) {
     const cities = props.data
     console.log(cities)
     const interval = props.interval * 1000
+    let id = props._id
 
 
 
 console.log(start)
 
     const itemView = (item) => (
-        <LinkRouter to={`/city/${item._id}`}>
+        <LinkRouter to={`/cities/${id}`}>
             <div className='CityCard'>
-            <img className='CityCard-Image' alt={item.city} src={item.photo} />
-            <h3 className='CityCard-title'>{item.title}</h3>
-            <h3 className='CityCard-subtitle'>{item.subtitle}</h3>
+                <img className='CityCard-Image' alt={item.city} src={item.photo} />
+                <h3 className='CityCard-title'>{item.title}</h3>
+                <h3 className='CityCard-subtitle'>{item.subtitle}</h3>
             </div>
         </LinkRouter>
-
     )
 
 
@@ -90,15 +90,13 @@ console.log("end: " + end)
 
 
     return (
-    <div className='carouselButoom'>
-        
-        <div className='slide CarouselStyle'>
-            <Arrow icon={'<'} click={previous} /> 
-            {cities?.slice(start, end).map(itemView)}
-            <Arrow icon= {'>'} click={next} />
-        </div>
-        
-    </div>
+        <div className='carouselButoom'>
+                <div className='slide CarouselStyle'>
+                    <Arrow icon={'<'} click={previous} /> 
+                    {cities?.slice(start, end).map(itemView)}
+                    <Arrow icon= {'>'} click={next} />
+                </div>
+            </div>
     )
 }
 
