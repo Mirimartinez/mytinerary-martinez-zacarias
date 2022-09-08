@@ -23,7 +23,7 @@
 }
 .NewCity-title{
     color: rgb(40, 93, 111);
-    font-size: 3rem;
+    font-size: 4rem;
     font-family: 'IM Fell French Canon';
     text-shadow: 3px 3px 3px white;
     margin: 5rem 0 -.5rem 0;
@@ -39,10 +39,32 @@
     flex-direction: column;
     margin: .5rem 0;
 }
-.NewCity-input{
-    resize: none;
-    border-radius: .4rem;
-    height: 2.5rem;
-    width: 14rem;
-} 
 
+.InputNewCity{
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+form{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+
+
+.ButtonInput{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.ButtonInput:hover{
+    background-color: black;
+    color: white;
+}
