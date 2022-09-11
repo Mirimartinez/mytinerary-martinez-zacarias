@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 .CityDetails-cont{
     display: flex;
     text-align: center;
@@ -6,6 +7,7 @@
     min-height: 80vh;
     background-color: rgba(0, 58, 77, 0.315);
     flex-direction: column;
+    font-family: 'Comfortaa', cursive;
 }
 .CityDetails-img{
     height: 25rem;

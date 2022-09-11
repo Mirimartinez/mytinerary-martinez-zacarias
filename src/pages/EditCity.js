@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import Input from '../component/Input'
 import '../styles/EditCity.css'
-import axios  from 'axios'
-import { useEffect ,useState } from 'react'
+import axios from 'axios'
+import {useEffect ,useState} from 'react'
 
 function EditCity() {
     const [cities, setCities] = useState([])
