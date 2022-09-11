@@ -1,11 +1,11 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import citiesAPI from './citiesApi'
+import apiURL from '../../api'
 
 
 const itinerariesAPI = createApi({
     reducerPath: "itinerariesAPI",
     baseQuery: fetchBaseQuery({
-        baseUrl: citiesAPI
+        baseUrl: apiURL
     }),
     endpoints: (builder) => ({
         getAllItineraries: builder.query({
