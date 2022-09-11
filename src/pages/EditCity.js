@@ -43,12 +43,12 @@ function EditCity() {
             <div className='InputSelectContainer'>
                 <select ref={selector} className='EditSelect'>
                     {cities.map(city =>
-                    <option className='OptionSelect' key={city._id} value={city._id}>{city.city}</option>
+                    <option className='OptionSelect' key={city._id} placeholder={city._id}>{city.city}</option>
                     )}
                 </select>
                 </div>
                 <form onSubmit={saveData}>
-                    {datos.map(dato => <Input key={dato.key} four={dato.for} type={dato.type} change={captureData}/>)}
+                    {datos.map(dato => <Input key={dato.key} value={dato.key} four={dato.for} type={dato.type} change={captureData}/>)}
                     <button type='submit' className='ButtonInput' >Submit</button>
                 </form>
                 <div className='EditCityImgContainer'>
