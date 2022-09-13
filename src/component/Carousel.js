@@ -16,24 +16,33 @@ function Carousel(props) {
     const [end,setEnd] = useState(start + range)
     const [intervalId, setIntervalId] = useState()
     const cities = props.data
-    console.log(cities)
     const interval = props.interval * 1000
+    //let id = props.data
 
 
 
-console.log(start)
+//console.log(id)
+
 
     const itemView = (item) => (
-        <LinkRouter to={`/city/${item._id}`}>
+        <LinkRouter to={`/cities/${item._id}`}>
+
             <div className='CityCard'>
-            <img className='CityCard-Image' alt={item.city} src={item.photo} />
-            <h3 className='CityCard-title'>{item.country}</h3>
-            <h3 className='CityCard-subtitle'>{item.city}</h3>
+                <img className='CityCard-Image' alt={item.city} src={item.photo} />
+                <h3 className='CityCard-title'>{item.city}</h3>
+                <h3 className='CityCard-subtitle'>{item.country}</h3>
             </div>
-        </LinkRouter>
+
+            </LinkRouter>
+        
+
 
     )
 
+
+
+
+    
 
 
 
@@ -82,15 +91,13 @@ function next (){
 
 
 
-console.log("start: " + start)
-console.log("end: " + end)
-
 
 
 
 
     return (
-    <div className='carouselButoom'>
+        <div className='carouselButoom'>
+
         
         <div className='slide CarouselStyle'>
             <Arrow icon={'<'} click={previous} /> 
@@ -99,6 +106,7 @@ console.log("end: " + end)
         </div>
         
     </div>
+
     )
 }
 

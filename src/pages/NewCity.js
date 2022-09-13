@@ -1,7 +1,6 @@
 
 import '../styles/Cities.css'
 import '../styles/NewCity.css'
-// import Input from '../component/Input'
 import React, { useState } from 'react'
 import axios  from 'axios'
 
@@ -29,16 +28,8 @@ function NewCity() {
         foundation: city.foundation ,
 }
 
-    //     const datos = [
-    //     {key: 'City', for: 'city', type: 'text'},
-    //     {key: 'Country', for: 'country', type: 'text'},
-    //     {key: 'Population', for: 'population', type: 'number'},
-    //     {key: 'Photo', for: 'photo', type: 'text'},
-    //     {key: 'Foundation', for: 'foundation', type: 'date'},
-    // ]  
     const saveData = async(e)=>{
         e.preventDefault()
-
     await axios.post('http://localhost:4000/cities/', newCity)
             setCity({...initialValor})
         }
@@ -50,9 +41,7 @@ function NewCity() {
                     <h1 className='NewCity-title'>New City</h1>
                 </div>
             <video id='videoNewCity' autoPlay loop muted>
-                <source
-                src="http://localhost:3000/videoHero.mp4"
-                type="video/mp4" />
+                <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
             </video>
             <form className='FormNewCity' onSubmit={saveData}>
                 <input
@@ -94,7 +83,7 @@ function NewCity() {
                 <input
                     type="number" 
                     className="InputNewCity"
-                    placeholder='foundation'
+                    placeholder='Foundation'
                     required
                     name="foundation" 
                     value={city.foundation}
