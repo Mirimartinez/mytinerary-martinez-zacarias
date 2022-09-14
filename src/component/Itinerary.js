@@ -2,22 +2,24 @@
 import Comment from './Comment'
 import Activities from './Activities'
 import '../styles/Itinerary.css'
-import {useState} from "react"
+import {useState, useEffect} from "react"
+import axios from 'axios'
+import {useParams} from 'react-router-dom'
 
-function Itinerary(props){
+function Itinerary(){
+    const params = useParams()
+    const {id} = params
+    const [itinerary, setItinerary] = useState([])
 
-    const itineraries = [
-        {
-            name:'Robert Spencer',
-            user:'robert_11',
-            price:'1.000 usd',
-            likes:'18',
-            tags:'#',
-            duration:'2 weeks',
-            photo: 'https://media.istockphoto.com/photos/mature-ethnic-man-wearing-eyeglasses-at-home-picture-id1319763230?b=1&k=20&m=1319763230&s=170667a&w=0&h=vqnbgy5ln6NvFK6OqRxl1jtIXstEN3xkWjVHMAbTKH8='
-        }
-    ]
 
+    const itineraries = async () => {
+        await axios.get(`http://localhost:4000/itineraries/?city=${id}`)
+        .then(response => setItinerary(response.data.response))
+    }
+
+    useEffect(() => {
+        itineraries()
+    }, [])
     
         const [open, setOpen] = useState(false)
     
@@ -30,27 +32,25 @@ function Itinerary(props){
         
     }
 
-    
     const itineraryCard = (item) =>{
-
         return(
             <div className='ItineraryCard ItineraryCard-subtitle'>
             <div className='CreatorItinerary'>
                 <div className='Itinerary-user'>
-                    <img src={item.photo} alt='img' className='CreatorImg'></img>
+                    <img src={item.user.photo} alt='img' className='CreatorImg'></img>
                     <p>Name: {item.name}</p>
-                    <p>User: {item.user}</p>
+                    <p>User: {item.user.name} {item.user.lastName}</p>
                 </div>
                 <div className='Itinerary-itinerary'>
-                    <p>Price: {item.price}</p>
+                    <p>Price:{"💵 ".repeat(item.price)}</p>
                     <p>LIkes: ♥{item.likes}</p>
-                    <p>Tags: {item.tags}</p>
+                    <p>Tags: {item.tags.map(tag => "#" + tag + " ")}</p>
                     <p>Duration: {item.duration}</p>
                 </div>
             </div>
             <div>
             <div className='Itinerary-activities'>
-            <Activities/>
+            <Activities itinerary={item._id}/>
             </div>
             {
             open
@@ -66,17 +66,10 @@ function Itinerary(props){
         )
     }
 
-    
-
     return(
         <>
-        {itineraries.map(itineraryCard)}
+        {itinerary.map(itineraryCard)}
         </>
     )
-    }
-
-
-
-
-
+}
 export default Itinerary
