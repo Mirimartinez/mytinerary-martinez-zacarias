@@ -3,13 +3,14 @@ import Input from '../component/Input'
 import '../styles/EditCity.css'
 import axios from 'axios'
 import {useEffect ,useState} from 'react'
+import apiurl from '../api'
 
 function EditCity() {
     const [cities, setCities] = useState([])
     const selector = useRef()
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/cities/`)
+        axios.get( apiurl + `/cities/`)
         .then(response => setCities(response.data))
     }, [])
 
@@ -22,7 +23,7 @@ function EditCity() {
     
     const saveData = async(e)=>{
         e.preventDefault()
-        await axios.patch(`http://localhost:4000/cities/${selector.current.value}`, city)
+        await axios.patch(apiurl + `/cities/${selector.current.value}`, city)
     }
 
 

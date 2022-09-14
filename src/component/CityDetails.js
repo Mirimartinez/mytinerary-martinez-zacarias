@@ -3,6 +3,7 @@ import {Link as LinkRouter} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import React, { useEffect, useState} from 'react'
 import axios from 'axios'
+import apiurl from '../api'
 
 function CityDetails(){
     const [city, setCity] = useState({})
@@ -14,7 +15,7 @@ function CityDetails(){
 
     const getCity = async () =>{
         try{
-            const response = await axios.get(`http://localhost:4000/cities/${id}`)
+            const response = await axios.get( apiurl + `/cities/${id}`)
             if(response.data.response){
                 return setCity(response.data.response)
             }

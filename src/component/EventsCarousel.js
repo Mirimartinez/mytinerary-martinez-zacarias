@@ -20,17 +20,6 @@ function EventsCarousel(){
         { url: "https://images.pexels.com/photos/2321188/pexels-photo-2321188.jpeg?", title: "Hong Kong"},
     ] */
 
-
-    /*  const [cities, setCities] = useState([])
-     console.log(useState)
-    useEffect(() =>{
-        
-        axios.get('http://localhost:4000/cities')
-        
-        .then(res => setCities(res.data.response))
-        console.log(setCities)
-    },[]) */
-
     const{
         data : cities,
         error,
