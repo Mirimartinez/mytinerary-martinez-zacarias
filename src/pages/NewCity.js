@@ -3,6 +3,7 @@ import '../styles/Cities.css'
 import '../styles/NewCity.css'
 import React, { useState } from 'react'
 import axios  from 'axios'
+import apiurl from '../api'
 
 function NewCity() {
 
@@ -30,7 +31,7 @@ function NewCity() {
 
     const saveData = async(e)=>{
         e.preventDefault()
-    await axios.post('http://localhost:4000/cities/', newCity)
+    await axios.post( apiurl + '/cities/', newCity)
             setCity({...initialValor})
         }
 

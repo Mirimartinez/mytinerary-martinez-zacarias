@@ -3,13 +3,14 @@ import Input from '../component/Input'
 import '../styles/EditCity.css'
 import axios from 'axios'
 import {useEffect ,useState} from 'react'
+import apiurl from '../api'
 
 function EditCity() {
     const [cities, setCities] = useState([])
     const selector = useRef()
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/cities/`)
+        axios.get( apiurl + `/cities/`)
         .then(response => setCities(response.data))
     }, [])
 
@@ -22,7 +23,7 @@ function EditCity() {
     
     const saveData = async(e)=>{
         e.preventDefault()
-        await axios.patch(`http://localhost:4000/cities/${selector.current.value}`, city)
+        await axios.patch(apiurl + `/cities/${selector.current.value}`, city)
     }
 
 
@@ -43,12 +44,12 @@ function EditCity() {
             <div className='InputSelectContainer'>
                 <select ref={selector} className='EditSelect'>
                     {cities.map(city =>
-                    <option className='OptionSelect' key={city._id} value={city._id}>{city.city}</option>
+                    <option className='OptionSelect' key={city._id} placeholder={city._id}>{city.city}</option>
                     )}
                 </select>
                 </div>
                 <form onSubmit={saveData}>
-                    {datos.map(dato => <Input key={dato.key} four={dato.for} type={dato.type} change={captureData}/>)}
+                    {datos.map(dato => <Input key={dato.key} value={dato.key} four={dato.for} type={dato.type} change={captureData}/>)}
                     <button type='submit' className='ButtonInput' >Submit</button>
                 </form>
                 <div className='EditCityImgContainer'>
