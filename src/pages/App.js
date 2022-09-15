@@ -10,6 +10,7 @@ import UnderConstruction from './UnderConstruction'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ScrollToTop from '../component/ScrollToTop'
 import MyTineraries from './MyTineraries'
+import SignUp from './SignUp'
 
 
 
@@ -20,6 +21,7 @@ export default function App() {
       <Layout>
         <Routes>
           <Route  path='/' element={<Home/>} />
+          <Route  path='/auth/signup' element={<SignUp/>} />
           <Route path='/Cities' element={<Cities/>} /> 
           <Route path='/NewCity' element={<NewCity/>} />
           <Route path='/EditCity' element={<EditCity/>} />

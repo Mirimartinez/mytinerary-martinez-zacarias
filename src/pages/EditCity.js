@@ -43,12 +43,12 @@ function EditCity() {
             <div className='InputSelectContainer'>
                 <select ref={selector} className='EditSelect'>
                     {cities.map(city =>
-                    <option className='OptionSelect' key={city._id} placeholder={city._id}>{city.city}</option>
+                    <option className='OptionSelect' key={city._id} value={city._id}>{city.city}</option>
                     )}
                 </select>
                 </div>
                 <form onSubmit={saveData}>
-                    {datos.map(dato => <Input key={dato.key} value={dato.key} four={dato.for} type={dato.type} change={captureData}/>)}
+                    {datos.map(dato => <Input key={dato.key} four={dato.for} type={dato.type} change={captureData}/>)}
                     <button type='submit' className='ButtonInput' >Submit</button>
                 </form>
                 <div className='EditCityImgContainer'>
@@ -57,5 +57,75 @@ function EditCity() {
         </div>
     )
 }
-
 export default EditCity
+
+
+// // import React, { useRef } from 'react'
+// import Input from '../component/Input'
+// import '../styles/EditCity.css'
+// import {useEditCityMutation, useGetAllCitiesQuery} from '../features/citiesApi'
+// import {useState} from 'react'
+
+
+
+
+// function EditCity() {
+
+//     const [EditCityRedux] = useEditCityMutation()
+//     const [id, setId] = useState()
+//     // const selector = useRef()
+
+//     const [city, setCity] = useState({})
+
+//     const captureData = (e) =>{
+//         const{name, value} = e.target
+//         setCity({...city, [name]:value})
+//     }
+//     const saveData = (e)=>{
+//         e.preventDefault()
+//         console.log(city);
+//         EditCityRedux({city, id})
+//         alert('City Edited successfuly')
+//     }
+
+//     function getId(i){
+//         setId(i.target.value);
+//         console.log(id);
+//     }
+
+//     let {data: cities} = useGetAllCitiesQuery()
+
+
+//     const datos = [
+//     {key: 'City', for: 'city', type: 'text'},
+//     {key: 'Country', for: 'country', type: 'text'},
+//     {key: 'Population', for: 'population', type: 'number'},
+//     {key: 'Photo', for: 'photo', type: 'text'},
+//     {key: 'Foundation', for: 'foundation', type: 'date'},
+//     ]
+
+//     return (
+//         <div className='InputSelectImgContainer'>
+//                     <h1 className='EditCityH1'>Edit City</h1>
+//             <video id='videoNewCity' autoPlay loop muted>
+//                 <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
+//             </video>
+//             <div className='InputSelectContainer'>
+//                 <select onChange={getId} className='EditSelect'>
+//                     {cities?.map(city =>
+//                     <option className='OptionSelect' key={city._id} placeholder={city._id} value={city._id}>{city.city}</option>
+//                     )}
+//                 </select>
+//                 </div>
+//                 <form onSubmit={saveData}>
+//                     {datos.map(dato => <Input key={dato.key} value={dato.key} four={dato.for} type={dato.type} change={captureData}/>)}
+//                     <button type='submit' className='ButtonInput'>Submit</button>
+//                 </form>
+//                 <div className='EditCityImgContainer'>
+//                     <img className='EditCityImg' src="/svg/man-at-work.png" alt="" /> 
+//                 </div>
+//         </div>
+//     )
+// }
+
+// export default EditCity
