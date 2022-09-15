@@ -38,14 +38,14 @@ function Itinerary(){
             <div className='CreatorItinerary'>
                 <div className='Itinerary-user'>
                     <img src={item.user.photo} alt='img' className='CreatorImg'></img>
-                    <p>Name: {item.name}</p>
-                    <p>User: {item.user.name} {item.user.lastName}</p>
+                    <p>Itinerary: {item.name}</p>
+                    <p>Created by: {item.user.name} {item.user.lastName}</p>
                 </div>
                 <div className='Itinerary-itinerary'>
-                    <p>Price:{"💵 ".repeat(item.price)}</p>
-                    <p>LIkes: ♥{item.likes}</p>
+                    <p>Price:{"💵 ".repeat(item.price)}</p>  {/*💰💸💴💶💷🪙*/}
+                    <p>Likes: {item.likes}♥</p>
                     <p>Tags: {item.tags.map(tag => "#" + tag + " ")}</p>
-                    <p>Duration: {item.duration}</p>
+                    <p>Duration: {item.duration}hs</p>
                 </div>
             </div>
             <div>
@@ -61,7 +61,7 @@ function Itinerary(){
             :null
         }
         </div>
-        <button className='Itinerary-button' onClick={handleOpenMenu}>comments</button>
+        <button className='Itinerary-button' onClick={handleOpenMenu}>Comments</button>
             </div>
         )
     }

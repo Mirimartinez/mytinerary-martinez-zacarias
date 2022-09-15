@@ -11,6 +11,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ScrollToTop from '../component/ScrollToTop'
 import MyTineraries from './MyTineraries'
 import SignUp from './SignUp'
+// import SignIn from './SignIn'
 
 
 
@@ -22,6 +23,7 @@ export default function App() {
         <Routes>
           <Route  path='/' element={<Home/>} />
           <Route  path='/auth/signup' element={<SignUp/>} />
+          {/* <Route path='/auth/signin' element={<SignIn/>}/> */}
           <Route path='/Cities' element={<Cities/>} /> 
           <Route path='/NewCity' element={<NewCity/>} />
           <Route path='/EditCity' element={<EditCity/>} />
