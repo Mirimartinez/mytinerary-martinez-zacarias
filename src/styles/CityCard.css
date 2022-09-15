@@ -33,7 +33,6 @@
     bottom:calc(350px / 8);
     left: 20%;
     font-family: 'IM Fell French Canon', serif;
-    backdrop-filter: blur(2px);
     border-radius: 7px;
     padding: .2rem .4rem .2rem .4rem;
 
@@ -88,7 +87,7 @@
         /* Or Top */
     transition: 0.4s ease-in-out;
     z-index: 0;
-    border-radius: 8px;
+    border-radius: 15px;
   }
   
   .CityCard:hover::before {
