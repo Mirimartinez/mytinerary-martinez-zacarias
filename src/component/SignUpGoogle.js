@@ -1,16 +1,27 @@
 import React, { useEffect, useRef } from 'react'
 import * as jose from 'jose'
+import { useSignUpUserMutation  } from '../features/UserAPI'
 import '../styles/SignUp.css'
 
 export default function SignUpGoogle() {
     
-    const buttonDiv = useRef()
-    console.log(buttonDiv.current)
+    const buttonDiv = useRef();
+    // const [addNewUser] = useSignUpUserMutation;
 
     async function handleCredentialResponse(response){
 
         let userObject = jose.decodeJwt(response.credential)
-        console.log(userObject)
+
+        // let newUser = {
+        //     name: userObject.name,
+        //     lastName: userObject.lastName,
+        //     country: userObject.country,
+        //     photo: userObject.photo,
+        //     password: userObject.password,
+        //     role: "admin",
+        //     mial: userObject.mial,
+        //     from: "google"
+        // }
     }
 
     useEffect(() => {
@@ -22,7 +33,7 @@ export default function SignUpGoogle() {
         });
         google.accounts.id.renderButton(
         buttonDiv.current,
-        { theme: "outline", size: "medium", text: 'signup_with', shape: 'circle', }  // customization attributes
+        { theme: "outline", size: "medium", text: 'signup_with'}  // customization attributes
         );
         // google.accounts.id.prompt(); // also display the One Tap dialog
     }, [])

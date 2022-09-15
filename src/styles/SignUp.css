@@ -29,9 +29,8 @@
     min-width: 100%;
     min-height: 100%;  
     filter: brightness(0.4);
-    margin-top: -18.5%;
-}
-.SignUptext{
+    margin-top: -17%;
+}.SignUptext{
     color: #fff;
     display: flex;
     justify-content: center;
