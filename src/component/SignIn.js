@@ -9,14 +9,14 @@ function SignIn(){
             </div>
             <video id='videoSignIn' autoPlay loop muted>
                 <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
-            </video>
+            </video> 
             <form className='SignInForm'>
-            <input type="text" placeholder='Name'/>
-            <input type="text" placeholder='Last Name'/>
-            <input type="text" placeholder='Photo url'/>
-            <input type="text" placeholder='Country'/>
-            <input type="text" placeholder='Mail'/>
-            <input type="text" placeholder='Password'/>
+            <input className='SignInInput' type="text" placeholder='Name'/>
+            <input className='SignInInput' type="text" placeholder='Last Name'/>
+            <input className='SignInInput' type="text" placeholder='Photo url'/>
+            <input className='SignInInput' type="text" placeholder='Country'/>
+            <input className='SignInInput' type="text" placeholder='Mail'/>
+            <input className='SignInInput' type="text" placeholder='Password'/>
             <button className='ButtonInput'>Submit</button>
 
             </form>
