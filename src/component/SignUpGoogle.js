@@ -1,27 +1,27 @@
 import React, { useEffect, useRef } from 'react'
 import * as jose from 'jose'
 import { useSignUpUserMutation  } from '../features/UserAPI'
-import '../styles/SignIn.css'
+import '../styles/SignUp.css'
 
 export default function SignUpGoogle() {
     
     const buttonDiv = useRef();
-    const [addNewUser] = useSignUpUserMutation;
+    // const [addNewUser] = useSignUpUserMutation;
 
     async function handleCredentialResponse(response){
 
         let userObject = jose.decodeJwt(response.credential)
 
-        let newUser = {
-            name: userObject.name,
-            lastName: userObject.lastName,
-            country: userObject.country,
-            photo: userObject.photo,
-            password: userObject.password,
-            role: "admin",
-            mial: userObject.mial,
-            from: "google"
-        }
+        // let newUser = {
+        //     name: userObject.name,
+        //     lastName: userObject.lastName,
+        //     country: userObject.country,
+        //     photo: userObject.photo,
+        //     password: userObject.password,
+        //     role: "admin",
+        //     mial: userObject.mial,
+        //     from: "google"
+        // }
     }
 
     useEffect(() => {
@@ -39,23 +39,8 @@ export default function SignUpGoogle() {
     }, [])
 
     return (
-        <div>
-            <video id='videoSignIn' autoPlay loop muted>
-                <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
-            </video> 
-            <div>
-                <h1 className='SignInTitle'>Sign Up</h1>
-            </div>
-            <form className='SignInForm'>
-                <input className='SignInInput' type="text" placeholder='Name'/>
-                <input className='SignInInput' type="text" placeholder='Last Name'/>
-                <input className='SignInInput' type="text" placeholder='Photo url'/>
-                <input className='SignInInput' type="text" placeholder='Country'/>
-                <input className='SignInInput' type="text" placeholder='Mail'/>
-                <input className='SignInInput' type="text" placeholder='Password'/>
-            <button className='ButtonInput'>Submit</button>
+        <div className='googleSu'>
             <div ref={buttonDiv}></div>
-            </form>
         </div>
     )
 }

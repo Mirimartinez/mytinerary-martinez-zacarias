@@ -1,15 +1,15 @@
-import '../styles/SignIn.css'
+import '../styles/SignUp.css'
 
-function SignIn(){
+function SignUpComp(){
 
     return(
         <div>
             <div>
-                <h1 className='SignInTitle'>Sign In</h1>
+                <h1 className='SignInTitle'>Sign Up</h1>
             </div>
             <video id='videoSignIn' autoPlay loop muted>
                 <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
-            </video> 
+        </video> 
             <form className='SignInForm'>
             <input className='SignInInput' type="text" placeholder='Name'/>
             <input className='SignInInput' type="text" placeholder='Last Name'/>
@@ -18,10 +18,10 @@ function SignIn(){
             <input className='SignInInput' type="text" placeholder='Mail'/>
             <input className='SignInInput' type="text" placeholder='Password'/>
             <button className='ButtonInput'>Submit</button>
-
             </form>
+            <div><p className='SignUptext'>Or</p></div>
         </div>
     )
 }
 
-export default SignIn
+export default SignUpComp
