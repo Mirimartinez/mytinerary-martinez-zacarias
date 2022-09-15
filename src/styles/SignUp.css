@@ -1,0 +1,45 @@
+
+.SignInTitle{
+    font-size: 3.5rem;
+    color:rgb(40, 93, 111);
+    font-family: 'IM Fell French Canon';
+    text-shadow: 2px 2px 2px white;
+    display: flex;
+    justify-content: center;
+}
+.SignInForm{
+    backdrop-filter: blur(5px);
+}
+.SignInInput{
+    margin-top: 12px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+.ButtonInput{
+    border: 2px solid rgb(40, 93, 111);
+    color: rgb(40, 93, 111);
+    font-size: 15px;
+    margin-top: 12px;
+    padding: 4px;
+}
+#videoSignIn{
+    position: fixed;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;  
+    filter: brightness(0.4);
+    margin-top: -18.5%;
+}
+.SignUptext{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin-bottom: .5%;
+}
+.googleSu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: .5%;
+}
