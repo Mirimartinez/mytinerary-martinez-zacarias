@@ -31,7 +31,14 @@ const citiesAPI = createApi({
             })
         }),
 
-        getity: builder.query({
+        deleteCity: builder.mutation({
+            query: (id) => ({
+                url: `/cities/${id}`,
+                method: "DELETE"
+            })
+        }),
+
+        getCity: builder.query({
             query: (id) => `cities/${id}`
         }),
 
@@ -45,10 +52,11 @@ const citiesAPI = createApi({
 
 export default citiesAPI
 export const {
-    useGetAllCitiesQuery, 
-    usePostCityMutation, 
-    useEditCityMutation, 
-    useGetityQuery, 
+    useGetAllCitiesQuery,
+    usePostCityMutation,
+    useEditCityMutation,
+    useDeleteCityMutation,
+    useGetCityQuery,
     useGetOneCityMutation
 } = citiesAPI
 
