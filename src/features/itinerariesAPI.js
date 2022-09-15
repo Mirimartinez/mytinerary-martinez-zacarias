@@ -9,7 +9,7 @@ const itinerariesAPI = createApi({
     }),
     endpoints: (builder) => ({
         getAllItineraries: builder.query({
-            query : (search) => `/itineraries/?itinerary=${search}`
+            query : (id) => `/itineraries/?itinerary=${id}`
         }),
         getCityItineraries: builder.query({
             query: (id) =>(`/itineraries/?city=${id}`),
