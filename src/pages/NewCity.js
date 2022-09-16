@@ -1,24 +1,28 @@
-
+import Alert from '../component/Alert/Alert'
+import Input from '../component/Input'
 import '../styles/Cities.css'
 import '../styles/NewCity.css'
-import React, { useState } from 'react'
-import axios  from 'axios'
+import { useState } from 'react'
+import { usePostCityMutation } from '../features/citiesApi'
+
+
 
 function NewCity() {
 
-    const initialValor ={
-        city: '' ,
-        country: '' ,
-        population: '' ,
-        photo: '' ,
-        foundation: '' ,
-    }
-    const [city, setCity] = useState(initialValor)
+    let [createNewCity, {data : response , error }] = usePostCityMutation()
+    let msg = ""
 
-    const captureData = (e) =>{
-        const{name, value} = e.target
-        setCity({...city, [name]:value})
+    if(response?.success){
+        msg = response?.message
+    }else{
+        msg = error?.data.message
     }
+
+
+
+
+
+    const [city, setCity] = useState([])
 
     const newCity ={
         city: city.city,
@@ -28,11 +32,24 @@ function NewCity() {
         foundation: city.foundation ,
 }
 
-    const saveData = async(e)=>{
+    const captureData = (e) =>{
+        const{name, value} = e.target
+        setCity({...city, [name]:value})
+    }
+
+    const saveData = (e)=>{
         e.preventDefault()
-    await axios.post('http://localhost:4000/cities/', newCity)
-            setCity({...initialValor})
+        createNewCity(newCity)
         }
+        console.log(newCity);
+
+        const inputs = [
+            {key: 'City', for: 'city', type: 'text'},
+            {key: 'Country', for: 'country', type: 'text'},
+            {key: 'Population', for: 'population', type: 'number'},
+            {key: 'Photo', for: 'photo', type: 'text'},
+            {key: 'Foundation', for: 'foundation', type: 'date'},
+            ]
 
 
     return(
@@ -44,52 +61,8 @@ function NewCity() {
                 <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
             </video>
             <form className='FormNewCity' onSubmit={saveData}>
-                <input
-                    type="text" 
-                    className="InputNewCity"
-                    placeholder='City'
-                    required
-                    name="city" 
-                    value={city.city}
-                    onChange={captureData}
-                />
-                <input
-                    type="text" 
-                    className="InputNewCity"
-                    placeholder='Country'
-                    required
-                    name="country" 
-                    value={city.country}
-                    onChange={captureData}
-                />
-                <input
-                    type="number" 
-                    className="InputNewCity"
-                    placeholder='Population'
-                    required
-                    name="population" 
-                    value={city.population}
-                    onChange={captureData}
-                />
-                <input
-                    type="text" 
-                    className="InputNewCity"
-                    placeholder='Photo URL'
-                    required
-                    name="photo" 
-                    value={city.photo}
-                    onChange={captureData}
-                />
-                <input
-                    type="number" 
-                    className="InputNewCity"
-                    placeholder='Foundation'
-                    required
-                    name="foundation" 
-                    value={city.foundation}
-                    onChange={captureData}
-                />
-                <button className='ButtonInput'>Submit</button>
+            {inputs.map(dato => <Input key={dato.key} value={dato.key} four={dato.for} type={dato.type} text={dato.key} change={captureData}/>)}
+                <Alert label={"Send"} message={msg} />
             </form>
         </div>
     )
