@@ -47,6 +47,6 @@ export default itinerariesAPI
 
 export const {useGetAllItinerariesQuery, 
     useGetCityItinerariesQuery, useGetUserItinerariesQuery,
-useEditItineraryMutation, useDeleteItineraryMutation, useNewItineraryMutation
+    useEditCityTineraryMutation, useDeleteItineraryMutation, useNewItineraryMutation
 
 } = itinerariesAPI
