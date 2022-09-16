@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+.SignInTitle{
+    font-size: 3.5rem;
+    color:rgb(40, 93, 111);
+    font-family: 'IM Fell French Canon';
+    text-shadow: 2px 2px 2px white;
+    /* margin-top: 10%; */
+    text-align: center;
+}
+.SignInForm{
+    /* margin-top: 10%; */
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    margin-bottom: 50px;
+}
+.SignInInput{
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+.ButtonInput{
+    border: 2px solid rgb(40, 93, 111);
+    color: rgb(40, 93, 111);
+    font-size: 15px;
+}
+#videoSignIn{
+    position: fixed;
+    z-index: -1;
+    min-width: 100vw;
+    min-height: 100vh;  
+    filter: brightness(0.4);
+}
+.SignUpP{
+    font-weight: 800;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px white;
+    font-family: 'Comfortaa', cursive;
+}
+.SignUpRouter{
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    margin-bottom: 10px;
+}

@@ -2,24 +2,17 @@
 import Comment from './Comment'
 import Activities from './Activities'
 import '../styles/Itinerary.css'
-import {useState, useEffect} from "react"
-import axios from 'axios'
+import {useState} from "react"
+import {useGetCityItinerariesQuery} from '../features/itinerariesAPI'
 import {useParams} from 'react-router-dom'
 
 function Itinerary(){
     const params = useParams()
     const {id} = params
-    const [itinerary, setItinerary] = useState([])
 
+    let {data : itinerary} = useGetCityItinerariesQuery(id)
+let allItineraries = itinerary?.response
 
-    const itineraries = async () => {
-        await axios.get(`http://localhost:4000/itineraries/?city=${id}`)
-        .then(response => setItinerary(response.data.response))
-    }
-
-    useEffect(() => {
-        itineraries()
-    }, [])
     
         const [open, setOpen] = useState(false)
     
@@ -29,7 +22,6 @@ function Itinerary(){
             } else {
                 setOpen(true)
             }
-        
     }
 
     const itineraryCard = (item) =>{
@@ -65,10 +57,10 @@ function Itinerary(){
             </div>
         )
     }
-
+console.log(itinerary);
     return(
         <>
-        {itinerary.map(itineraryCard)}
+        {allItineraries?.map(itineraryCard)}
         </>
     )
 }

@@ -27,7 +27,6 @@ function Cities(){
             <div className='Cities-container'>
                 {cities?.map(CityCard)}
             </div>
-
         </div>
     )
 }

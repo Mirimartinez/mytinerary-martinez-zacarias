@@ -11,8 +11,8 @@ const pages = [
 
 ]
 
-const link = (page) => <LinkRouter className='Header-none Header-a' to={page.to}>{page.name}</LinkRouter>
-const menu = (page) => <LinkRouter className=' Header-a Burger' to={page.to}>{page.name}</LinkRouter>
+const link = (page) => <LinkRouter className='Header-none Header-a' key={page.name} to={page.to}>{page.name}</LinkRouter>
+const menu = (page) => <LinkRouter className=' Header-a' key={page.name} to={page.to}>{page.name}</LinkRouter>
 
 function Header() {
     const [open, setOpen] = useState(false)
@@ -24,9 +24,6 @@ function Header() {
             setOpen(true)
         }
     }
-
-
-
 
     
     return (

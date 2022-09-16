@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Home from '../pages/Home'
 import Layout from '../layouts/Layout'
@@ -10,8 +9,8 @@ import UnderConstruction from './UnderConstruction'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ScrollToTop from '../component/ScrollToTop'
 import MyTineraries from './MyTineraries'
-import SignUp from './SignUp'
-//import SignInPage from './SignIn'
+import SignUpPage from './SignUpPage'
+import SignInPage from './SignInPage'
 
 
 
@@ -22,8 +21,8 @@ export default function App() {
       <Layout>
         <Routes>
           <Route  path='/' element={<Home/>} />
-          <Route  path='/auth/signup' element={<SignUp/>} />
-          {/* <Route path='/auth/signin' element={<SignInPage/>}/> */}
+          <Route  path='/auth/signup' element={<SignUpPage/>} />
+          <Route path='/auth/signin' element={<SignInPage/>}/>
           <Route path='/Cities' element={<Cities/>} /> 
           <Route path='/NewCity' element={<NewCity/>} />
           <Route path='/EditCity' element={<EditCity/>} />
