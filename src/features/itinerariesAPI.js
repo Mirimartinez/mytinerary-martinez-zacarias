@@ -2,12 +2,14 @@ import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 import apiURL from './api'
 
 
+
 const itinerariesAPI = createApi({
     reducerPath: "itinerariesAPI",
     baseQuery: fetchBaseQuery({
         baseUrl: apiURL
     }),
     endpoints: (builder) => ({
+
         newItinerary: builder.mutation({
             query: (data) => ({
                 url: `/itineraries/`,
@@ -25,7 +27,7 @@ const itinerariesAPI = createApi({
         getUserItineraries: builder.query({
             query: (id) => `/itineraries/?auth=${id}`
             }),
-        editItinerary: builder.mutation({
+        editCityTinerary: builder.mutation({
             query: ({id, data}) => ({
                 url: `/cities/${id}`,
                 method: "PATCH",
@@ -42,7 +44,9 @@ const itinerariesAPI = createApi({
 })
 
 export default itinerariesAPI
+
 export const {useGetAllItinerariesQuery, 
     UseGetCityItinerariesQuery, useGetUserItinerariesQuery,
 UseEditItineraryMutation, UseDeleteItineraryMutation, UsenewItineraryMutation
+
 } = itinerariesAPI

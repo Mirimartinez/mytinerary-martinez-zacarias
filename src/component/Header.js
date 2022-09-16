@@ -11,8 +11,8 @@ const pages = [
 
 ]
 
-const link = (page) => <LinkRouter className='Header-none Header-a' to={page.to}>{page.name}</LinkRouter>
-const menu = (page) => <LinkRouter className=' Header-a' to={page.to}>{page.name}</LinkRouter>
+const link = (page) => <LinkRouter className='Header-none Header-a' key={page.name} to={page.to}>{page.name}</LinkRouter>
+const menu = (page) => <LinkRouter className=' Header-a' key={page.name} to={page.to}>{page.name}</LinkRouter>
 
 function Header() {
     const [open, setOpen] = useState(false)
@@ -24,9 +24,6 @@ function Header() {
             setOpen(true)
         }
     }
-
-
-
 
     
     return (
@@ -48,12 +45,22 @@ function Header() {
             </div>
             <div id="Header-logo">
                 <img className="Header-logo" src="http://localhost:3000/logo.png" alt="logo"/>
+            </div>
+            <div>   
                 <h1 className="Header-title">MyTinerary</h1>
             </div>
             <div className='Header-profile' >
+                <div class="Header-btn dropdown">
                 <img className='ImgProfile' alt='profile' src="https://media0.giphy.com/media/kcZlnhiaB1p76tKS6S/giphy.gif?cid=790b7611658a2c1837a6b243c6e5b7c5f9203dcba641b933&rid=giphy.gif&ct=s" />
+  <button className='SignInUp'></button>
+  <div class="dropdown-content">
+  <LinkRouter className='Header-none Header-A' to={'/auth/signin'}>Sign In</LinkRouter>
+  <LinkRouter className='Header-none Header-A' to={'/auth/signup'}>Sign Up</LinkRouter>
+
+  </div>
+</div>
+                </div>
             </div>
-        </div>
     )
 }
 

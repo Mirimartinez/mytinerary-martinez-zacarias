@@ -14,20 +14,19 @@ const citiesAPI = createApi({
         }),
 
         postCity: builder.mutation({
-            query: (data) => ({
-                url: '/cities',
+            query: (newCity) => ({
+                url: '/cities/',
                 method: "POST",
-                body: data,
-                responseHandler: (res) => res.body.response
+                body: newCity,
+             
             })
         }),
 
         editCity: builder.mutation({
-            query: ({dataCity, id}) => ({
+            query: ({city, id}) => ({
                 url: `/cities/${id}`,
                 method: "PATCH",
-                body: dataCity,
-                // responseHandler: (res) => res.body.response
+                body: city,                
             })
         }),
 
