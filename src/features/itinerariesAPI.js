@@ -1,5 +1,5 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import apiURL from '../../api'
+import apiURL from '../api'
 
 
 const itinerariesAPI = createApi({
@@ -8,6 +8,14 @@ const itinerariesAPI = createApi({
         baseUrl: apiURL
     }),
     endpoints: (builder) => ({
+        
+        newItinerary: builder.mutation({
+            query: (data) => ({
+                url: `/itineraries/`,
+                method: "POST",
+                body: data
+            })
+        }),
         getAllItineraries: builder.query({
             query : (id) => `/itineraries/?itinerary=${id}`
         }),
@@ -18,7 +26,7 @@ const itinerariesAPI = createApi({
         getUserItineraries: builder.query({
             query: (id) => `/itineraries/?auth=${id}`
             }),
-        editItinerary: builder.mutation({
+        editCityTinerary: builder.mutation({
             query: ({id, data}) => ({
                 url: `/cities/${id}`,
                 method: "PATCH",
@@ -35,7 +43,7 @@ const itinerariesAPI = createApi({
 })
 
 export default itinerariesAPI
-export const {useGetAllItinerariesQuery, 
-    UseGetCityItinerariesQuery, useGetUserItinerariesQuery,
-UseEditItineraryMutation, UseDeleteItineraryMutation
+export const {useNewItineraryMutation,useGetAllItinerariesQuery, 
+    useGetCityItinerariesQuery, useGetUserItinerariesQuery,
+useEditCityTineraryMutation, useDeleteItineraryMutation
 } = itinerariesAPI
