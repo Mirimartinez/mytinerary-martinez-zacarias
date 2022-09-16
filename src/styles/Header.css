@@ -32,7 +32,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10vw;
+    width: 5vw;
+    margin-left: -10%;
 }
 
 .Header-a{
@@ -44,7 +45,8 @@
     border: 2px solid rgb(40, 93, 111);
     border-radius: 10px;
     padding: 3px 45px;
-    margin-top: 4px;
+    margin-top: 2px;
+    margin-left: -2rem;
     text-align: justify;
     background-color: antiquewhite;
     font-weight: 700;
@@ -67,16 +69,22 @@
 }
 
 .ImgProfile{
-    height: 40%;
+    height: 5rem;
 }
-
+.Nav-Sign{
+    width: 36%;
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
 .Header-a:hover{
     background-color: rgb(40, 93, 111);
     color: antiquewhite;
     border: 2px solid antiquewhite;
     position: relative;
-    left: 2vw;
-
+    left: 1vw;
 }
 .nav{
     display: flex;
@@ -89,8 +97,59 @@
     text-shadow: 10px 10px 8px rgb(40, 93, 111);
     font-size: 4rem;
     font-family: 'IM Fell French Canon', serif;
+    margin-left: -2rem;
 }
-
+/* DROPDOWN MENU */
+.Header-btn{
+    display: none;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+    margin-left: 2rem;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    width: 95%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  .SignInUp{
+    opacity: 0;
+  }
+  .Header-A{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: rgb(104, 132, 150);
+    text-decoration: none;
+    border: 2px solid rgb(40, 93, 111);
+    border-radius: 10px;
+    padding: 3px 45px;
+    margin-top: 2px;
+    text-align: justify;
+    background-color: antiquewhite;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .Header-A:hover{
+    background-color: rgb(40, 93, 111);
+    color: antiquewhite;
+    border: 2px solid antiquewhite;
+    position: relative;
+}
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    color: rgb(104, 132, 150);
+    
+    padding: 5px;
+    text-decoration: none;
+  }
+ 
 @media (max-width: 1024px){
     .PagesLinks{
         width: 10vw;
@@ -136,9 +195,10 @@
         display: none;
     }
 
-    #Header-logo{
-        width: 36%;
-        height: 100%;
+    .Header-logo{
+        width: 4rem;
+        height: auto;
+        margin-right: -32rem;
     }
 
 
@@ -156,10 +216,11 @@
 
     .Header-title{
         font-size: 2rem;
+        margin-right: -3rem;
     }
 
     .ImgProfile{
-        height: 30%;
+        height: 5rem;
     }
 
     .Header-logo{
@@ -171,16 +232,19 @@
     }
 
     .Header-nav{
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 }
 
 @media (max-width: 320px){
-    .ImgProfile{
-        height: 25%;
-    }
+    
 
     .Header-title{
         font-size: 1.5rem;
+        margin: 4rem -1rem 0 0;
+
+    }
+    .dropdown{
+        margin-left: 0;
     }
 }

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import * as jose from 'jose'
+import { useSignUpUserMutation  } from '../features/UserAPI'
+import '../styles/SignUp.css'
 
 export default function SignUpGoogle() {
     
@@ -25,7 +27,7 @@ export default function SignUpGoogle() {
     }, [])
 
     return (
-        <div>
+        <div className='googleSu'>
             <div ref={buttonDiv}></div>
         </div>
     )
