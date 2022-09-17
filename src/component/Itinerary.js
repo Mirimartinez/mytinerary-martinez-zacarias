@@ -5,6 +5,7 @@ import '../styles/Itinerary.css'
 import {useState} from "react"
 import {useGetCityItinerariesQuery} from '../features/itinerariesAPI'
 import {useParams} from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom'
 
 function Itinerary(){
     const params = useParams()
@@ -60,6 +61,9 @@ let allItineraries = itinerary?.response
 console.log(itinerary);
     return(
         <>
+        {allItineraries?.length? null:<div>
+            <LinkRouter to='/cities' className="Details-subtitle"> We don't have any itineraries here right now...</LinkRouter>
+        </div>}
         {allItineraries?.map(itineraryCard)}
         </>
     )
