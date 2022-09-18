@@ -35,8 +35,8 @@ let allItineraries = itinerary?.response
                     <p>Created by: {item.user.name} {item.user.lastName}</p>
                 </div>
                 <div className='Itinerary-itinerary'>
-                    <p>Price:{"💵 ".repeat(item.price)}</p>  {/*💰💸💴💶💷🪙*/}
-                    <p>Likes: {item.likes}♥</p>
+                    <p>Price:{"💵".repeat(item.price)}</p>  {/*💰💸💴💶💷🪙*/}
+                    <p className='Likes'>{item.likes}❤️</p>  {/*👍🏼*/}
                     <p>Tags: {item.tags.map(tag => "#" + tag + " ")}</p>
                     <p>Duration: {item.duration}hs</p>
                 </div>
