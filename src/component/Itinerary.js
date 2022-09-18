@@ -1,5 +1,5 @@
 
-import Comment from './Comment'
+import Comment from './DisplayComment'
 import Activities from './Activities'
 import '../styles/Itinerary.css'
 import {useState} from "react"
