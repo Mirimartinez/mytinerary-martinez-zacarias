@@ -9,7 +9,6 @@
 }
 .SignInForm{
     /* margin-top: 10%; */
-    backdrop-filter: blur(5px);
     padding: 2rem;
     margin-bottom: 50px;
 }
