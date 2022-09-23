@@ -80,7 +80,7 @@ function Itinerary(){
     return(
         <>
         {allItineraries?.length? null:<div>
-            <LinkRouter to='/cities' className="Details-subtitle"> We don't have any itineraries here right now...</LinkRouter>
+            <LinkRouter to='/cities' className="Details-subtitle"> We'll have some itineraries soon!!</LinkRouter>
         </div>}
         {allItineraries?.map(itineraryCard)}
         </>
