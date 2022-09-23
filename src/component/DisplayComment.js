@@ -1,49 +1,55 @@
-
 import '../styles/Comment.css'
+import axios from 'axios'
+import {useState, useEffect} from 'react'
+//import {useDeleteCommentMutation} from '../features/commentsAPI'
 
 function Comment(props){
+    let juli = ""
+    let localId = ""
+    
+    // if(localStorage.getItem("user")) {
+    //     juli = JSON.parse(localStorage.getItem("user")).role 
+    //     localId = JSON.parse(localStorage.getItem("user")).
+    // } 
 
-    const comments = [
-        {
-            name:'Manolo Smith',
-            user:'Smith_20',
-            comment:'very beautiful city totally recommended, I hope to return again',
-            photo: 'https://media.istockphoto.com/photos/living-that-urban-life-picture-id1165314750?b=1&k=20&m=1165314750&s=170667a&w=0&h=mS8qGVV2GWQ9S_9kNsBTg3ZTN5nCOfByLQkzqxOqPuQ='
-        },
+    const [comment, setComment] = useState([])
 
-        {
-            name:'Alex Tower',
-            user:'TTMaster',
-            comment:'a totally recommendable experience, I had a lot of fun',
-            photo: 'https://t4.ftcdn.net/jpg/00/88/53/89/360_F_88538986_5Bi4eJ667pocsO3BIlbN4fHKz8yUFSuA.jpg'
-        },
-        {
-            name:'Sara Arrow',
-            user:'Destiny_12',
-            comment:'I am very happy to have lived a totally pleasant experience, I leave satisfied',
-            photo: 'https://media.istockphoto.com/photos/young-woman-laughing-while-relaxing-at-home-picture-id1326417862?b=1&k=20&m=1326417862&s=170667a&w=0&h=CFCBJScwuPZesB9vBkVwglEEkmiIW8cZ32x2l3UcTIY='
-        }
-    ]
-
+    const comments = async () => {
+        await axios.get(`http://localhost:4000/comments/?itinerary=${props.itinerary}`)
+        .then(response => setComment(response.data.response))
+    }
+    useEffect(() => {
+        comments()
+    }, [])
+    
     
     const commentsCards = (item) =>{
+        console.log(item);
         return(
+            <>
             <div className='CommentsCard CommentsCard-subtitle'>
             <div className='CommentPhotoNameUser'>    
-                <img src={item.photo} alt='img' className='CommentPhoto'></img>
-                <p className='CommentText'>Name: {item.name}</p>
-                <p className='CommentText'>User: {item.user}</p>
+                <img src={item.user.photo} alt='img' className='CommentPhoto'></img>
             </div>
             <div className='CommentComment'>
-                <p> "{item.comment}"</p>
+                <p>Name: {item.user.name} {item.user.lastName}</p>
+                <p className='Comment'> "{item.comment}"</p>
             </div>
             </div>
+            <span>
+            {localId === "item.user._id" ? <button className='modifyComment'>Edit</button> : <button className='modifyComment'>NOT WORKINGGGGGGGGG</button>}
+            {juli === "admin" ? <button className='modifyComment' >Delete</button> : null}
+
+            </span>
+            
+            </>
         )
     }
 
     return(
         <>
-        {comments.map(commentsCards)}
+        {comment?.map(commentsCards)}
+        
         </>
     )
 
@@ -52,3 +58,4 @@ function Comment(props){
 
 
 export default Comment
+
