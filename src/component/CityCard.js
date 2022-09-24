@@ -2,11 +2,8 @@ import '../styles/CityCard.css'
 import {Link as LinkRouter} from 'react-router-dom'
 
 function CityCard(props) {
-    // const cities  = props.data
-    let city = props.city
-    let country= props.country
-    let photo = props.photo
-    let id = props._id
+    let {city, country, photo, id} = props.data
+
     return(
             <LinkRouter to={`/cities/${id}`}>
                 <div className='CityCard'>

@@ -10,14 +10,13 @@ function SignInComp(){
     const passwordRef = useRef();
 
     const [SignInRedux, { data: signInRedux, error }] = useSignInUserMutation();
-    const [user, setUser] = useState();
-    let id = signInRedux?.response.user;
-    let message = ""
-    useEffect(() => {
-        localStorage.setItem("user", JSON.stringify(id));
-    }, user);
 
-    localStorage.getItem("user");
+    let id = signInRedux?.response;
+    let message = ""
+    if(signInRedux?.success){
+        localStorage.setItem("token", id.token);
+        localStorage.setItem("user", JSON.stringify(id.user));
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -28,13 +27,11 @@ function SignInComp(){
             from: "form",
         };
         SignInRedux(dataLog);
-        setUser(signInRedux);
     }
 
         if (signInRedux?.success) {
             message = signInRedux.message
         }else {
-            console.log(error)
             message = error?.data.message
         }
 
@@ -50,13 +47,11 @@ function SignInComp(){
                 <input className='SignInInput' type="text" ref={mailRef} placeholder='Mail'/>
                 <input className='SignInInput' type="password" ref={passwordRef} placeholder='Password'/>
                 <Alert label={"Login"} message={message} />
-                <p className='SignUpP'>By signing up, you agree to our Terms , Privacy Policy and Cookies
-                    Policy.</p>
             <SignInGoogle />
             </form>
             <div className="SignUpRouter">
                 <p className='SignUpP'>Do you want an account?</p>
-                <LinkRouter to="/auth/signuppage" className='SignUpP'>Sign Up</LinkRouter>
+                <LinkRouter to="/auth/signup" className='SignUpP'>Sign Up</LinkRouter>
             </div>
         </div>
     )

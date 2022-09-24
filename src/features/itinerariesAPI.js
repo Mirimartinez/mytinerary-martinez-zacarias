@@ -14,31 +14,56 @@ const itinerariesAPI = createApi({
             query: (data) => ({
                 url: `/itineraries/`,
                 method: "POST",
-                body: data
+                body: data,
+                headers: {"Authorization": "Bearer" + localStorage.getItem("token")}
             })
         }),
         getAllItineraries: builder.query({
-            query : (id) => `/itineraries/?itinerary=${id}`
+            query : () => `/itineraries`
         }),
         getCityItineraries: builder.query({
             query: (id) =>(`/itineraries/?city=${id}`),
-            
+            transformResponse: res => res.response
         }),
         getUserItineraries: builder.query({
-            query: (id) => `/itineraries/?auth=${id}`
+            query: (id) => ({
+                url: `/itineraries/?user=${id}`,
+                headers:{ "Authorization": "Bearer" + localStorage.getItem("token") }
             }),
+                transformResponse: res => res.response
+            }),
+        
+        editUserItinerary: builder.mutation({
+            query: ({id, data}) => ({
+                url: `/auth/?itinerary=${id}`,
+                method: "PATCH",
+                body: data,
+                headers: {"Authorization": "Bearer" + localStorage.getItem("token")}
+            })
+        }),
+
         editCityTinerary: builder.mutation({
             query: ({id, data}) => ({
-                url: `/cities/${id}`,
+                url: `/itineraries/${id}`,
                 method: "PATCH",
-                body: data
+                body: data,
+                headers: {"Authorization": "Bearer" + localStorage.getItem("token")}
             })
         }),
         deleteItinerary: builder.mutation({
             query: (id) => ({
                 url: `/itineraries/${id}`,
                 method:'DELETE',
+                headers: {"Authorization": "Bearer" + localStorage.getItem("token")}
                 })
+        }),
+
+        likeDislikeItineraries: builder.mutation({
+            query: (id) =>({
+                url: `/itineraries/likes/${id}`,
+                method: 'PATCH',
+                headers: {"Authorization": "Bearer " + JSON.parse(localStorage.getItem("token"))}
+            })
         })
     })
 })
@@ -46,7 +71,7 @@ const itinerariesAPI = createApi({
 export default itinerariesAPI
 
 export const {useGetAllItinerariesQuery, 
-    useGetCityItinerariesQuery, useGetUserItinerariesQuery,
-    useEditCityTineraryMutation, useDeleteItineraryMutation, useNewItineraryMutation
+    useGetCityItinerariesQuery, useGetUserItinerariesQuery, useEditUserItineraryMutation,
+    useEditCityTineraryMutation, useDeleteItineraryMutation, useNewItineraryMutation, useLikeDislikeItinerariesMutation
 
 } = itinerariesAPI

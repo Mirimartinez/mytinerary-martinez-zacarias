@@ -7,56 +7,62 @@ import { useNewItineraryMutation } from "../features/itinerariesAPI"
 
 export default function AddItinerary() {
   const navigate = useNavigate();
+
+
+
   const nameRef = useRef();
   const priceRef = useRef();
   const durationRef = useRef();
   const tagsRef = useRef();
+
+
   const [id, setId] = useState();
-  const { data: cities } = useGetAllCitiesQuery();
+  const { data: cities } = useGetAllCitiesQuery("");
   const [NewItineraryRedux] = useNewItineraryMutation()
 
-
+  let allCities = cities?.response
+  let user = JSON.parse(localStorage.getItem("user")).id
   function getID(e) {
     setId(e.target.value);
   }
+  
 
   const form = [
     {
       label: "Name",
       htmlFor: "Name",
       type: "text",
-      value: "Enter a itinerary",
-      valueRef: nameRef,
+      placeHolder: "Enter a itinerary",
+      value: nameRef,
     },
     {
       label: "Price",
       htmlFor: "Price",
       type: "number",
-      value: "Enter a Price",
-      valueRef: priceRef,
+      placeHolder: "Enter a Price",
+      value: priceRef,
     },
     {
       label: "Duration",
       htmlFor: "Duration",
       type: "number",
-      value: "Enter a duration",
-      valueRef: durationRef,
+      placeHolder: "Enter a duration",
+      value: durationRef,
     },
     {
       label: "Tags",
       htmlFor: "Tags",
       type: "String",
-      value: "add tags",
-      valueRef: tagsRef,
+      placeHolder: "add tags",
+      value: tagsRef,
     },
   ];
 
   function Create(e) {
     e.preventDefault();
-
-    const dataItinerary = {
+     const dataItinerary = {
       name: nameRef.current.value,
-      user: id, /// Modify user for get the user
+      user: user,
       city: id,
       price: priceRef.current.value,
       tags: tagsRef.current.value,
@@ -72,21 +78,16 @@ export default function AddItinerary() {
         <form className="NewCity-form" onSubmit={Create}>
           <select className="EditCity-select" onChange={getID}>
             <option hidden>Select city</option>
-            {cities?.map((city) => (
+            {allCities?.map((city) => (
               <option className="Option-select" key={city._id} value={city._id}>
                 {city.city}{" "}
               </option>
             ))}
           </select>
-          {form.map((input) => (
-            <Input
-              label={input.label} four={input.htmlFor} type={input.type} key={input.label}
-              valueRef={input.value}
-            />
+          {form?.map((input) => (
+            <Input label={input.label} four={input.htmlFor} type={input.type} key={input.label} value={input.value} />
           ))}
-          <button className="Submit-button" type="submit">
-            Add Itinerary
-          </button>
+          <button className="Submit-button" type="submit"> Add Itinerary </button>
         </form>
         <button className="Submit-button" onClick={() => navigate(-1)}>
           Go back

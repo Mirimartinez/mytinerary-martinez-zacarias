@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 .Hero {
   display: flex;
   flex-direction: column;
@@ -30,8 +31,9 @@
   padding-top: 5rem;
 }
 .Hero-subtitle{
-  font-family: 'IM Fell French Canon', serif;
-  font-size: 2rem;
+  /* font-family: 'IM Fell French Canon', serif; */
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.5rem;
   backdrop-filter: invert(5%);
   margin-top: 12rem;
   color: wheat;
@@ -43,9 +45,9 @@
   border-radius: 10px;
   width: 20rem;
   padding: .7rem;
-  font-size: 25px;
+  font-size: 30px;
   background-color: rgb(40, 93, 111);
-  font-family: 'IM Fell French Canon', serif;
+  font-family: 'Comfortaa', cursive;
   text-decoration: none;
 }
 .Hero-button:hover{

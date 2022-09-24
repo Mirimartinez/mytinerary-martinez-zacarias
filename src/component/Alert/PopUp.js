@@ -18,7 +18,7 @@ export default function PopUp(props) {
             </div>
             {/* button controls */}
             <div className="pu-button-container">
-                <a href='/cities' >
+                <a href='/' >
                 <button onClick={()=> setPopUp(false)}> OK </button>
                 </a>  
             </div>

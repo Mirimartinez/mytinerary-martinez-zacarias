@@ -8,17 +8,11 @@ import { Link as LinkRouter } from 'react-router-dom'
 import NewComment from './NewComment'
 
 function Itinerary(){
-    let juli = ""
-    // let localId = ""
+    let role = ""
     
     if(localStorage.getItem("user")) {
-        juli = JSON.parse(localStorage.getItem("user")).role 
-        // localId = JSON.parse(localStorage.getItem("user")).id
+        role = JSON.parse(localStorage.getItem("user")).role 
     } 
-
-
-    
-
 
     const params = useParams()
     const {id} = params
@@ -62,9 +56,8 @@ function Itinerary(){
             {open?
                 <div className='Itinerary-comment'>
                 <Comment itinerary={item._id}/>
-{/*                    {juli === "admin" ? <button className='modifyComment'>Delete</button> : null} */}
                     
-                {juli !== "" ? <NewComment/> : null}
+                {role !== "" ? <NewComment/> : null}
                 </div>
             :null}
         </div>
