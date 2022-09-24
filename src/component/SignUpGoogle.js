@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import * as jose from 'jose'
 import { useSignUpUserMutation  } from '../features/UserAPI'
 import '../styles/SignUp.css'
@@ -6,12 +6,24 @@ import '../styles/SignUp.css'
 export default function SignUpGoogle() {
     
     const buttonDiv = useRef();
+    let [newUser, {data: resSignUp, error}] = useSignUpUserMutation()
 
     async function handleCredentialResponse(response){
 
         let userObject = jose.decodeJwt(response.credential)
-
+        let data = {
+            name: userObject.name,
+            lastName: userObject.lastName,
+            photo: userObject.photo,
+            country: userObject.country,
+            mail: userObject.mail,
+            password: userObject.password,
+            role: 'user',
+            from: 'google'
+        }
+        newUser(data)
     }
+    
     useEffect(() => {
         /* global google */
     google.accounts.id.initialize({

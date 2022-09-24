@@ -1,13 +1,13 @@
 import { useSignUpUserMutation  } from '../features/UserAPI'
 import '../styles/SignIn.css'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import SignUpGoogle from './SignUpGoogle'
 import { Link as LinkRouter } from 'react-router-dom'
 import Input from './Input'
 import Alert from './Alert/Alert'
 
 export default function SignUp() {
-
+    const [showAlert,setShowAlert] = useState(false)
     let [SignUpRedux, {data : userRedux , error}] = useSignUpUserMutation()
     let message = ""
 
@@ -78,8 +78,16 @@ export default function SignUp() {
                 SignUpRedux(dataCity)
             }
 
+            useEffect(() => {
+                if (showAlert) {
+                    setTimeout(() => {
+                        setShowAlert(false)
+                    },5000)
+                }
+            },[SignUpRedux, error])
+
     return (
-    <div>
+        <div>
             <video id='videoSignIn' autoPlay loop muted>
                 <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
             </video> 
@@ -98,6 +106,10 @@ export default function SignUp() {
                 <p>Do you have an account?</p>
                 <LinkRouter to="/auth/signin" className='SignUpP'>Log In</LinkRouter>
             </div>
+            { showAlert ?
+                <Alert res={SignUpRedux} err={error}/>
+                : null
+            }
         </div>
     )
 }
