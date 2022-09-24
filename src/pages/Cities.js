@@ -21,7 +21,7 @@ function Cities(){
             <h1 className='Cities-title'>Cities</h1>
             <InputSearch searchEl={search} action={handleValue}/>
             <div className='Cities-container'>
-                {cities?.response.map((item) => {
+                {cities?.map((item) => {
                     return (<CityCard key={item._id} data={item}/>)
                 })}
             </div>

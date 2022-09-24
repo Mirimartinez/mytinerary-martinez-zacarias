@@ -15,11 +15,10 @@ function Itinerary(){
     } 
 
     const params = useParams()
-    const {id} = params
+    const id = params
 
     let {data : itinerary} = useGetCityItinerariesQuery(id)
-    let allItineraries = itinerary?.response
-
+    let allItineraries = itinerary
     
         const [open, setOpen] = useState(false)
     

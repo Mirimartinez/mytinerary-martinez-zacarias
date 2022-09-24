@@ -13,7 +13,6 @@ function CityDetails(){
 
         if(localStorage.getItem("user")) {
             localId = JSON.parse(localStorage.getItem("user"))
-            console.log(localId);
     }
 
 
@@ -21,8 +20,7 @@ function CityDetails(){
        data: city,
        isSuccess
     } = useGetCityQuery(id)
-    console.log(isSuccess);
-console.log(city);
+    
 
 
     return(

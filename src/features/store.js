@@ -10,6 +10,7 @@ const store = configureStore({
 
     reducer:{
         [userAPI.reducerPath] : userAPI.reducer,
+        cities : citiesAPI,
         [citiesAPI.reducerPath] : citiesAPI.reducer,
         [itinerariesAPI.reducerPath] : itinerariesAPI.reducer,
         [activitiesAPI.reducerPath] : activitiesAPI.reducer,

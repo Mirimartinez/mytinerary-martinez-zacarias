@@ -61,7 +61,7 @@ function EditCity() {
             <div className='InputSelectContainer'>
                 <select ref={selector} className='EditSelect' onChange={getID}>
                     <option hidden >Select City</option>
-                    {cities?.response.map(city =>
+                    {cities?.map(city =>
                     <option className='OptionSelect' key={city._id} value={city._id}>{city.city}</option>
                     )}
                 </select>

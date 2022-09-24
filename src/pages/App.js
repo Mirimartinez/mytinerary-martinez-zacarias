@@ -36,7 +36,7 @@ export default function App() {
           <Route path='/Cities' element={<Cities/>} /> 
           <Route path='/NewCity' element={user === "admin" ? <NewCity/> : <UnderConstruction /> } />
           <Route path='/EditCity' element={user === "admin" ? <EditCity/> : <UnderConstruction /> } />
-          <Route path='/cities/:id' element={<City/>}/>
+          <Route path='/city/:id' element={<City/>}/>
           <Route path='/Mytineraries/patchitinerary' element={user === "" ? <UnderConstruction /> : <PatchItinerary/>}/>
           <Route path='/MyTineraries' element={user === "" ? <UnderConstruction />  : <MyTineraries/> }/>
           <Route path='/NewItinerary' element={user === "" ? <UnderConstruction />  : <NewItinerary/> }/>
