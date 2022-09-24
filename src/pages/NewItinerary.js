@@ -16,7 +16,6 @@ export default function AddItinerary() {
   const tagsRef = useRef();
 
 
-
   const [id, setId] = useState();
   const { data: cities } = useGetAllCitiesQuery("");
   const [NewItineraryRedux] = useNewItineraryMutation()

@@ -2,6 +2,10 @@ import '../styles/Input.css'
 
 function Input(props) {
     let type = props.type
+    let label = props.label
+    let key = props.key
+    let Value = props.value
+
     
     return(
         <div className='Input-form'>

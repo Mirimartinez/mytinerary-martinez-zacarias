@@ -1,5 +1,5 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import apiURL from './api'
+import apiURL from '../api'
 
 const citiesAPI = createApi({
     reducerPath : "citiesAPI",
@@ -42,11 +42,13 @@ const citiesAPI = createApi({
         }),
 
         getCity: builder.query({
-            query: (id) => `cities/${id}`
+            query: (id) => `cities/${id}`,
+            transformResponse: res => res.response
         }),
 
         getOneCity: builder.mutation({
-            query: (id) => `cities/${id}`
+            query: (id) => `cities/${id}`,
+            transformResponse: res => res.response
         })
     })
 })
