@@ -22,7 +22,7 @@ let message = props.message
 
   return (
     <>
-      <button onClick={() => setPopUp(true)} id='ButtonAlert' className={duringPopUp}> {labelButton}!  </button>
+      <button onClick={() => setPopUp(true)} id='ButtonAlert' className={duringPopUp}>{labelButton}</button>
       {popUp && <PopUp setPopUp={setPopUp} h2={message} />}
     </>
   );
