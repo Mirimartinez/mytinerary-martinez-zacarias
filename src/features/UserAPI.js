@@ -20,20 +20,40 @@ const userAPI = createApi({
         signInUser: builder.mutation({
             query: (user) => ({
                 url: '/auth/signin',
-                method: 'POST',
+                method: "POST",
                 body: user
             })
         }),
     
         signOutUser: builder.mutation({
-            query: (mail) => ({
+            query: (user) => ({
                 url: '/auth/signout',
                 method: 'POST',
-                body: mail
+                body: user
             })
         }),
-    }),
+
+        verifyToken: builder.mutation({
+            query: (token) => ({
+                url: "/auth/token",
+                headers: {"Authorization": "Bearer " + token}
+            })
+        }),
+
+        editUser: builder.mutation({
+            query: (data) => ({
+                url: `/auth/`,
+                method: "PATCH",
+                body: data,
+                headers: {"Authorization": "Bearer " + localStorage.getItem("token")}
+            })
+        }),
+
+        getUser: builder.query({
+            query: (id) => `/auth/${id}`
+        })
+    })
 })
 
 export default userAPI
-export const {useSignUpUserMutation, useSignInUserMutation, useSignOutUserMutation } = userAPI
+export const { useSignUpUserMutation, useSignInUserMutation, useSignOutUserMutation,useVerifyTokenMutation, useEditUserMutation, useGetUserQuery } = userAPI
