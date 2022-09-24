@@ -19,7 +19,8 @@
     font-size: 4rem;
     font-family: 'IM Fell French Canon';
     text-shadow: 3px 3px 3px white;
-    margin-top: 3rem;
+    margin: 3rem 0;
+
 }
 .Cities-subtitle{
     font-size: 2rem;
@@ -37,4 +38,7 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+.Cities-container{
+    margin-top: 3%;
 }

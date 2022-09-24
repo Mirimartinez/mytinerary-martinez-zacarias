@@ -1,22 +1,24 @@
-
-import Comment from './Comment'
+import Comment from './DisplayComment'
 import Activities from './Activities'
 import '../styles/Itinerary.css'
 import {useState} from "react"
+import {useGetCityItinerariesQuery} from '../features/itinerariesAPI'
+import {useParams} from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom'
+import NewComment from './NewComment'
 
-function Itinerary(props){
+function Itinerary(){
+    let role = ""
+    
+    if(localStorage.getItem("user")) {
+        role = JSON.parse(localStorage.getItem("user")).role 
+    } 
 
-    const itineraries = [
-        {
-            name:'Robert Spencer',
-            user:'robert_11',
-            price:'1.000 usd',
-            likes:'18',
-            tags:'#',
-            duration:'2 weeks',
-            photo: 'https://media.istockphoto.com/photos/mature-ethnic-man-wearing-eyeglasses-at-home-picture-id1319763230?b=1&k=20&m=1319763230&s=170667a&w=0&h=vqnbgy5ln6NvFK6OqRxl1jtIXstEN3xkWjVHMAbTKH8='
-        }
-    ]
+    const params = useParams()
+    const {id} = params
+
+    let {data : itinerary} = useGetCityItinerariesQuery(id)
+    let allItineraries = itinerary?.response
 
     
         const [open, setOpen] = useState(false)
@@ -27,56 +29,54 @@ function Itinerary(props){
             } else {
                 setOpen(true)
             }
-        
     }
 
-    
     const itineraryCard = (item) =>{
-
         return(
+            
             <div className='ItineraryCard ItineraryCard-subtitle'>
+
             <div className='CreatorItinerary'>
                 <div className='Itinerary-user'>
-                    <img src={item.photo} alt='img' className='CreatorImg'></img>
-                    <p>Name: {item.name}</p>
-                    <p>User: {item.user}</p>
+                    <img src={item.user.photo} alt='img' className='CreatorImg'></img>
+                    <p>Itinerary: {item.name}</p>
+                    <p>Created by: {item.user.name} {item.user.lastName}</p>
                 </div>
-                <div className='Itinerary-itinerary'>
-                    <p>Price: {item.price}</p>
-                    <p>LIkes: ♥{item.likes}</p>
-                    <p>Tags: {item.tags}</p>
-                    <p>Duration: {item.duration}</p>
+                <div className='Itinerary-itinerary' >
+                    <p>Price:{"💵".repeat(item.price)}</p>  {/*💰💸💴💶💷🪙*/}
+                    <p className='Likes'>{item.likes}❤️</p>  {/*👍🏼*/}
+                    <p>Tags: {item.tags.map(tag => "#" + tag + " ")}</p>
+                    <p>Duration: {item.duration}hs</p>
                 </div>
             </div>
             <div>
             <div className='Itinerary-activities'>
-            <Activities/>
+            <Activities itinerary={item._id}/>
             </div>
-            {
-            open
-                ?
+            {open?
                 <div className='Itinerary-comment'>
-            <Comment/>
-            </div>
-            :null
-        }
+                <Comment itinerary={item._id}/>
+                    
+                {role !== "" ? <NewComment/> : null}
+                </div>
+            :null}
         </div>
-        <button className='Itinerary-button' onClick={handleOpenMenu}>comments</button>
+        
+
+    
+        <button className='Itinerary-button' onClick={handleOpenMenu}>Comments</button>
             </div>
+            
         )
     }
 
-    
-
     return(
         <>
-        {itineraries.map(itineraryCard)}
+        {allItineraries?.length? null:<div>
+            <LinkRouter to='/cities' className="Details-subtitle"> We'll have some itineraries soon!!</LinkRouter>
+        </div>}
+        {allItineraries?.map(itineraryCard)}
         </>
     )
-    }
-
-
-
-
-
+}
 export default Itinerary

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon:ital@0;1&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 .Hero {
   display: flex;
   flex-direction: column;
@@ -8,8 +9,8 @@
   height: 100vh;
   background-size: cover;
   background-position: 40% 80%;
-  margin-top: -6.2rem;
-
+  margin-top: -8rem;
+  margin-bottom: 2rem;
 }
 
 #video{
@@ -19,7 +20,8 @@
     min-width: 100%;
     min-height: 100%;  
     filter: brightness(0.4);
-
+    margin-top: 3rem;
+    
 }
 .Hero-title{
   color: #fff;
@@ -29,22 +31,23 @@
   padding-top: 5rem;
 }
 .Hero-subtitle{
-  font-family: 'IM Fell French Canon', serif;
-  font-size: 2rem;
+  /* font-family: 'IM Fell French Canon', serif; */
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.5rem;
   backdrop-filter: invert(5%);
-  margin-top: 8rem;
+  margin-top: 12rem;
   color: wheat;
 }
 .Hero-button{
-  margin-top: 5rem;
+  margin-top: 7rem;
   border: 1px solid #4a3827;
   color: white;
   border-radius: 10px;
   width: 20rem;
   padding: .7rem;
-  font-size: 25px;
+  font-size: 30px;
   background-color: rgb(40, 93, 111);
-  font-family: 'IM Fell French Canon', serif;
+  font-family: 'Comfortaa', cursive;
   text-decoration: none;
 }
 .Hero-button:hover{

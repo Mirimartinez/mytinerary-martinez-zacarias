@@ -1,36 +1,30 @@
 import '../styles/Activities.css'
+import axios from 'axios'
+import {useState, useEffect} from 'react'
 
 function Activity(props){
-    const activities = [
-        {
-            name: 'Outdoor yoga',
-            photo: 'https://northernvirginiamag.com/wp-content/uploads/2021/04/outdooryoga.jpg',
-        },
-        {
-            name: 'Guided tour!',
-            photo: 'https://i0.wp.com/www.disfrutarosario.com/wp-content/uploads/2019/04/Circuito-del-Puerto-1.jpg?resize=1024%2C682&ssl=1',
-        },
-        {
-            name: 'Visit gourmet restaurants',
-            photo: 'https://blog.miranterestaurante.com.br/wp-content/uploads/2018/09/chef-1024x550.jpg',
-        }
-    ]
+    const [activity, setActivity] = useState([])
 
-    const activityCard = (item) =>{
 
-        return(
-        <div className="Activities-card" style={{ backgroundImage: `url(${item.photo})`}}>
-            <p className='Activities-text'>{item.name}</p>
-            
-        </div>)
+    const activities = async () => {
+        await axios.get(`http://localhost:4000/activities/?itinerary=${props.itinerary}`)
+        .then(response => setActivity(response.data.response))
     }
+
+    useEffect(() => {
+        activities()
+    }, [])
 
 
     return(
         <>
-        {activities.map(activityCard)}
+        {activity.map((item) => (            
+            <div className="Activities-card" key={item.name} style={{ backgroundImage: `url(${item.photo})`}}>
+                <p className='Activities-text'>{item.name}</p>
+            </div>
+            ))}
         </>
-    )
+        )
 }
 
 export default Activity

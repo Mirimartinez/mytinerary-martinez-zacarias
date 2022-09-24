@@ -1,39 +1,47 @@
-
+import Alert from '../component/Alert/Alert'
+import Input from '../component/Input'
 import '../styles/Cities.css'
 import '../styles/NewCity.css'
-import React, { useState } from 'react'
-import axios  from 'axios'
+import { useState, useRef } from 'react'
+import { usePostCityMutation } from '../features/citiesApi'
+
+
 
 function NewCity() {
+    const cityEl = useRef()
+    const countryEl = useRef()
+    const populationEl = useRef()
+    const photoEl = useRef()
+    const foundationEl = useRef()
 
-    const initialValor ={
-        city: '' ,
-        country: '' ,
-        population: '' ,
-        photo: '' ,
-        foundation: '' ,
+    let [createNewCity, {data : response , error }] = usePostCityMutation()
+    let msg = ""
+
+    if(response?.success){
+        msg = response?.message
+    }else{
+        msg = error?.data.message
     }
-    const [city, setCity] = useState(initialValor)
 
-    const captureData = (e) =>{
-        const{name, value} = e.target
-        setCity({...city, [name]:value})
-    }
-
-    const newCity ={
-        city: city.city,
-        country: city.country ,
-        population: city.population ,
-        photo: city.photo ,
-        foundation: city.foundation ,
-}
-
-    const saveData = async(e)=>{
+    const saveData = (e)=>{
         e.preventDefault()
-    await axios.post('http://localhost:4000/cities/', newCity)
-            setCity({...initialValor})
+        const newCity = {
+            city: cityEl.current.value,
+            country: countryEl.current.value ,
+            population: populationEl.current.value ,
+            photo: photoEl.current.value ,
+            foundation: foundationEl.current.value
+        }
+        createNewCity(newCity)
         }
 
+        const inputs = [
+            {name: 'city', fer: cityEl, type: 'text'},
+            {name: 'country', fer: countryEl, type: 'text'},
+            {name: 'population', fer: populationEl, type: 'number'},
+            {name: 'photo', fer: photoEl, type: 'text'},
+            {name: 'foundation', fer: foundationEl, type: 'date'},
+            ]
 
     return(
         <div className='NewCity'>
@@ -44,52 +52,8 @@ function NewCity() {
                 <source src="http://localhost:3000/videoHero.mp4" type="video/mp4" />
             </video>
             <form className='FormNewCity' onSubmit={saveData}>
-                <input
-                    type="text" 
-                    className="InputNewCity"
-                    placeholder='City'
-                    required
-                    name="city" 
-                    value={city.city}
-                    onChange={captureData}
-                />
-                <input
-                    type="text" 
-                    className="InputNewCity"
-                    placeholder='Country'
-                    required
-                    name="country" 
-                    value={city.country}
-                    onChange={captureData}
-                />
-                <input
-                    type="number" 
-                    className="InputNewCity"
-                    placeholder='Population'
-                    required
-                    name="population" 
-                    value={city.population}
-                    onChange={captureData}
-                />
-                <input
-                    type="text" 
-                    className="InputNewCity"
-                    placeholder='Photo URL'
-                    required
-                    name="photo" 
-                    value={city.photo}
-                    onChange={captureData}
-                />
-                <input
-                    type="number" 
-                    className="InputNewCity"
-                    placeholder='Foundation'
-                    required
-                    name="foundation" 
-                    value={city.foundation}
-                    onChange={captureData}
-                />
-                <button className='ButtonInput'>Submit</button>
+            {inputs.map(dato => <Input key={dato.name} value={dato.name} four={dato.fer} type={dato.type}/>)}
+                <Alert label={"Send"} message={msg} />
             </form>
         </div>
     )
