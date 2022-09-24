@@ -12,13 +12,16 @@
 .CityDetails-img{
     height: 25rem;
     border-radius: 15px;
-    margin-bottom: 5rem;
+    margin: 2rem 0 5rem 0;
+    box-shadow: 10px 10px 11px 1px rgba(0,0,0,0.58);
+
 }
 .CityDetails-h1{
     font-size: 3.5rem;
     color:rgb(40, 93, 111);
     font-family: 'IM Fell French Canon';
-    text-shadow: 2px 2px 2px white
+    text-shadow: 2px 2px 2px white;
+    margin-top: 3%;
 }
 .CityDetails-h3{
     font-size: 2rem;
@@ -58,4 +61,5 @@
     position: absolute;
     top: 14rem;
     left: 0;
+    margin-left: 3%;
 }

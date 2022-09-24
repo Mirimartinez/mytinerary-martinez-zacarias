@@ -31,8 +31,8 @@ function Comment(props){
             <div className='CommentsCard CommentsCard-subtitle'>
             <div className='CommentPhotoNameUser'>    
                 <img src={item.photo} alt='img' className='CommentPhoto'></img>
-                <p>Name: {item.name}</p>
-                <p>User: {item.user}</p>
+                <p className='CommentText'>Name: {item.name}</p>
+                <p className='CommentText'>User: {item.user}</p>
             </div>
             <div className='CommentComment'>
                 <p> "{item.comment}"</p>

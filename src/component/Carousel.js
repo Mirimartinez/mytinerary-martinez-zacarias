@@ -1,6 +1,3 @@
-/* import { clear } from 'console'
-import { func } from 'prop-types' */
-/* import { clearInterval } from 'timers' */
 import '../styles/Carousel.css'
 import '../styles/CityCard.css'
 import Arrow from './Carousel/Arrow'
@@ -17,54 +14,25 @@ function Carousel(props) {
     const [intervalId, setIntervalId] = useState()
     const cities = props.data
     const interval = props.interval * 1000
-    //let id = props.data
-
-
-
-//console.log(id)
-
 
     const itemView = (item) => (
         <LinkRouter to={`/cities/${item._id}`}>
-
             <div className='CityCard'>
                 <img className='CityCard-Image' alt={item.city} src={item.photo} />
                 <h3 className='CityCard-title'>{item.city}</h3>
                 <h3 className='CityCard-subtitle'>{item.country}</h3>
             </div>
-
-            </LinkRouter>
-        
-
-
+        </LinkRouter>
     )
-
-
-
-
-    
-
-
 
     useEffect(() =>{
         let id = setInterval(function (){
             next()
         }, interval)
-
-
-
-
         setIntervalId(id)
-
         return() => clearInterval(id);
-
         }, [start])
     
-        
-        
-
-
-
     function previous( ) {
         if(start >= range){
     setStart( start-range)
@@ -89,22 +57,13 @@ function next (){
     clearInterval(intervalId)
 }
 
-
-
-
-
-
-
     return (
-        <div className='carouselButoom'>
-
-        
+    <div className='carouselButoom'>
         <div className='slide CarouselStyle'>
             <Arrow icon={'<'} click={previous} /> 
             {cities?.slice(start, end).map(itemView)}
             <Arrow icon= {'>'} click={next} />
         </div>
-        
     </div>
 
     )

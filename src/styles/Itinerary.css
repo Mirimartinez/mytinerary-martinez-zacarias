@@ -2,7 +2,6 @@
     flex-direction: column;
     width: 95%;
     min-height: 20rem;
-    
     position: relative;
     box-shadow: 15px 15px 50px #adb5bd75;
     text-align: center;
@@ -10,7 +9,7 @@
     border-radius: 15px;
     box-shadow: 10px 10px 11px 1px rgba(0,0,0,0.58);
     background: linear-gradient(45deg,#7EE8FA,#EEC0C6);
-    margin: 1rem;
+    margin: 1.5% 2.5%;
 }
 
 .CreatorItinerary{
@@ -25,6 +24,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    gap: 1.5rem;
 }
 
 .Itinerary-user{
@@ -40,7 +40,9 @@
 
 .CreatorImg{
     height: 40vh;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 10px 10px 11px 1px rgba(0,0,0,0.58);
+    margin: 3% 0;
 }
 
 
@@ -53,14 +55,15 @@
     color: rgb(109, 80, 217);
     bottom:calc(350px / 8);
     font-family: 'Comfortaa', cursive;
-    border-radius: 7px;
+    border-radius: 15px;
     padding: .2rem .4rem .2rem .4rem;
     gap: 30px;
+    letter-spacing: 1px;
 }
 
 .Itinerary-comment{
     width: 100%;
-    margin-top: 1rem;
+    margin-top: 2.5%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -70,16 +73,35 @@
 
 .Itinerary-button{
     display: flex;
-    width: 100%;
+    width: 90%;
     align-items: center;
     flex-direction: column;
     font-size: 2rem;
-    background-color: black;
+    background-color: rgb(104, 132, 150);
     color: white;
     border-radius: 10px;
+    border: none;
+    margin: 2% 5%;
+    padding: .5rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 .Itinerary-activities{
     display: flex;
     justify-content: space-around;
+}
+
+.Details-subtitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 900;
+    font-family: 'Comfortaa', cursive;
+    color: black;
+    padding: 50px;
+    background-color: rgb(104, 132, 150);
+    border-radius: 360px;
 }

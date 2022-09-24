@@ -32,8 +32,8 @@ function CityDetails(){
         <div className='CityDetails-cont'>
             <LinkRouter to='/cities' className='CityBackButton'><img src="/backArrow.svg" alt=""/></LinkRouter>
             <h1 className='CityDetails-h1'>{city.city}</h1>
-        <LinkRouter to={'/cities'}><img className='CityDetails-img' alt={city.city} src={city.photo} /></LinkRouter>
-        <h3 className='CityDetails-h3'>{city.country}</h3>
+            <img className='CityDetails-img' alt={city.city} src={city.photo}/>
+            <h3 className='CityDetails-h3'>{city.country}</h3>
         <p className='CityDetails-text'>The current population of {city.city} in 2022 is {city.population}.</p>
             <p className='CityDetails-text'>It was founded in {year}.</p>
             <p className='CityDetails-text'>{city.description}</p>

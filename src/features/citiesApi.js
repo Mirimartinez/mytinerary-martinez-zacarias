@@ -1,38 +1,42 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import apiURL from './api'
 
-
- const citiesAPI = createApi({
+const citiesAPI = createApi({
     reducerPath : "citiesAPI",
-
     baseQuery : fetchBaseQuery({
-        baseUrl : "http://localhost:4000/"
+        baseUrl : apiURL
     }),
 
     endpoints: (builder) => ({
 
         getAllCities: builder.query({
-            query : (search) => `/cities/?city=${search}`
+            query : (id) => `/cities/?city=${id}`
         }),
 
         postCity: builder.mutation({
-            query: (data) => ({
-                url: '/cities',
+            query: (newCity) => ({
+                url: '/cities/',
                 method: "POST",
-                body: data,
-                responseHandler: (res) => res.body.response
+                body: newCity,
             })
         }),
 
         editCity: builder.mutation({
-            query: ({id, data}) => ({
+            query: ({city, id}) => ({
                 url: `/cities/${id}`,
-                method: "PUT",
-                body: data,
-                responseHandler: (res) => res.body.response
+                method: "PATCH",
+                body: city,                
             })
         }),
 
-        getity: builder.query({
+        deleteCity: builder.mutation({
+            query: (id) => ({
+                url: `/cities/${id}`,
+                method: "DELETE"
+            })
+        }),
+
+        getCity: builder.query({
             query: (id) => `cities/${id}`
         }),
 
@@ -45,10 +49,12 @@ import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 
 export default citiesAPI
-export const {useGetAllCitiesQuery, 
-    usePostCityMutation, 
-    useEditCityMutation, 
-    useGetityQuery, 
+export const {
+    useGetAllCitiesQuery,
+    usePostCityMutation,
+    useEditCityMutation,
+    useDeleteCityMutation,
+    useGetCityQuery,
     useGetOneCityMutation
 } = citiesAPI
 
