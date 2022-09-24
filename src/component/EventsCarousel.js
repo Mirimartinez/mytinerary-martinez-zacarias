@@ -11,8 +11,6 @@ function EventsCarousel(){
         isLoading,
         isSuccess,
         isFailed
-
-        
     } = useGetAllCitiesQuery('')
 
     if(isLoading){
