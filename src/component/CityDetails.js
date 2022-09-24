@@ -3,12 +3,19 @@ import {Link as LinkRouter} from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import {useGetCityQuery} from '../features/citiesApi'
 import Map from '../component/Maps'
+import newItinerary from '../component/NewItinerary'
 
 function CityDetails(){
     const params = useParams()
     const {id} = params
 
-    // const navigate = useNavigate()
+    let localId = ""
+
+        if(localStorage.getItem("user")) {
+            localId = JSON.parse(localStorage.getItem("user"))
+            console.log(localId);
+    }
+
 
     const {
        data: city,
@@ -28,6 +35,7 @@ console.log(city);
             <p className='CityDetails-text'>It was founded in {new Date(city?.foundation).getFullYear()}.</p>
             <p className='CityDetails-text'>{city?.description}</p>
             {isSuccess && <Map city={city}/>}
+        {(localId !== " ") ? <newItinerary/> : null}
         </div>
         )
     }
