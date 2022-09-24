@@ -1,5 +1,5 @@
 import '../styles/MyTineraries.css'
-import Itinerary from '../component/Itinerary'
+import Itinerary from '../component/Itinerary copy'
 import {Link as LinkRouter} from 'react-router-dom'
 
 
