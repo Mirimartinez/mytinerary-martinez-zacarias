@@ -40,11 +40,11 @@ function Comment(props){
             <div className='CommentComment'>
                 <p>Name: {item.user.name} {item.user.lastName}</p>
                 {/* <p>Name: {item.user._id} {localId.id}</p> */}
-                <textarea className='Comment' defaultValue={item.comment} onChange={handleEditComment} ></textarea>
+                <textarea className='Comment' rows="4" cols="15" defaultValue={item.comment} onChange={handleEditComment} ></textarea>
             </div>
 
-            </div><EditComment id={item._id} data={editedComment}/>
-            {/* {(localId.id === `${item.user._id}` )?  : null} */}
+            </div>
+            {(localId.id === `${item.user._id}` )? <EditComment id={item._id} data={editedComment}/> : null}
             {role === "admin" ? <DeleteComment data={item._id}/> : null}            
             </>
         )

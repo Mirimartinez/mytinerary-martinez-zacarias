@@ -51,6 +51,11 @@
 .Comment{
     font-size: 2.4rem;
     margin-top: 3%;
+    width: 100%;
+    color: #FFF;
+    background: transparent;
+    border: none;
+    outline: none;
 }
 .newComment{
     color: #5F0A87;
