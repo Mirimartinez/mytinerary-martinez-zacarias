@@ -14,7 +14,7 @@ export default function Map(props) { //mapa para details
     return(
         <>
       
-            <MapContainer id='map' center={{lat:city.latitude, lng:city.longitude}} zoom={13} scrollWheelZoom={false}>
+            <MapContainer id='map' center={{lat:city.latitude, lng:city.longitude}} zoom={11} scrollWheelZoom={false}>
         <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
