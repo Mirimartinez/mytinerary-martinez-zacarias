@@ -105,3 +105,21 @@
     background-color: rgb(104, 132, 150);
     border-radius: 360px;
 }
+
+.LikeContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.LikeButton{
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
+
+.LikeButton:hover{
+    background: none;
+    color: black;
+}
