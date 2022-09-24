@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
-import apiurl from "../../api";
+import apiurl from "../api";
 
-export const commentsAPI = createApi({
+const commentsAPI = createApi({
     reducerPath: "commentsAPI",
     baseQuery: fetchBaseQuery({
         baseUrl: apiurl
@@ -21,17 +21,20 @@ export const commentsAPI = createApi({
             getItinerariesComment: builder.mutation({
                 query: (id) => ({
                     url: `/comments/?itinerary=${id}`,
-                    mothod: "GET",
+                    method: "GET",
                 }),
                 transformResponse: (res) => res.response
                     }),
                     
             modifyComment: builder.mutation({
-                query: ({id,data}) =>({
+                query: ({id,data}) => {
+                    console.log(id, data);
+                    return ({
                 url: `/comments/${id}`,
-                method:'PUT',
-                body: data
-                }),
+                method:'PATCH',
+                body: {data}
+            // acá token
+                })},
                 transformResponse: res => res.response
                 }),
             deleteComment: builder.mutation({
@@ -43,4 +46,5 @@ export const commentsAPI = createApi({
         })
     })
 
+    export default commentsAPI
 export const {useCreateCommentMutation, useDeleteCommentMutation, useModifyCommentMutation,useGetItinerariesCommentMutation} = commentsAPI
