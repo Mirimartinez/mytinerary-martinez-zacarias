@@ -17,12 +17,13 @@ function Cities(){
 
     let{ data : cities } = useGetAllCitiesQuery( searchValue ? searchValue : '')
     return (
-        
         <div className='Cities'>
             <h1 className='Cities-title'>Cities</h1>
             <InputSearch searchEl={search} action={handleValue}/>
             <div className='Cities-container'>
-                {cities?.response.map(CityCard)}
+                {cities?.response.map((item) => {
+                    return (<CityCard key={item._id} data={item}/>)
+                })}
             </div>
         </div>
     )
