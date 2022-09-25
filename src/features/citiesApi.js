@@ -1,5 +1,5 @@
 import {createApi,fetchBaseQuery} from '@reduxjs/toolkit/query/react'
-import apiURL from './api'
+import apiURL from '../api'
 
 const citiesAPI = createApi({
     reducerPath : "citiesAPI",
@@ -10,7 +10,9 @@ const citiesAPI = createApi({
     endpoints: (builder) => ({
 
         getAllCities: builder.query({
-            query : (id) => `/cities/?city=${id}`
+            query : (search) => `/cities/?city=${search}`,
+            transformResponse: res => res.response
+
         }),
 
         postCity: builder.mutation({
@@ -18,30 +20,37 @@ const citiesAPI = createApi({
                 url: '/cities/',
                 method: "POST",
                 body: newCity,
+                headers: {"Authorization": "Bearer " + localStorage.getItem('token')}
             })
         }),
 
         editCity: builder.mutation({
-            query: ({city, id}) => ({
+            query: ({editCity:city, id}) => {
+                return ({
                 url: `/cities/${id}`,
                 method: "PATCH",
-                body: city,                
-            })
+                body: city,
+                headers: {"Authorization": "Bearer " + localStorage.getItem('token')}
+            })}
+            
         }),
 
         deleteCity: builder.mutation({
             query: (id) => ({
                 url: `/cities/${id}`,
-                method: "DELETE"
+                method: "DELETE",
+                headers: {"Authorization": "Bearer " + localStorage.getItem('token')}
             })
         }),
 
         getCity: builder.query({
-            query: (id) => `cities/${id}`
+            query: (id) => `cities/${id}`,
+            transformResponse: res => res.response
         }),
 
         getOneCity: builder.mutation({
-            query: (id) => `cities/${id}`
+            query: (id) => `cities/${id}`,
+            transformResponse: res => res.response
         })
     })
 })

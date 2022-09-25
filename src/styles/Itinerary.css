@@ -73,15 +73,15 @@
 
 .Itinerary-button{
     display: flex;
-    width: 90%;
+    width: 50%;
     align-items: center;
     flex-direction: column;
     font-size: 2rem;
-    background-color: rgb(104, 132, 150);
+    background-color: rgb(27, 69, 96);
     color: white;
     border-radius: 10px;
     border: none;
-    margin: 2% 5%;
+    margin: 2% 25%;
     padding: .5rem;
     letter-spacing: 2px;
     font-weight: 600;
@@ -104,4 +104,25 @@
     padding: 50px;
     background-color: rgb(104, 132, 150);
     border-radius: 360px;
+}
+
+.LikeContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.LikeButton{
+    background: none;
+    border: none;
+    font-size: 2rem;
+}
+
+.LikeButton:hover{
+    background: none;
+    color: black;
+}
+.Likes{
+    color: #f8312f;
 }

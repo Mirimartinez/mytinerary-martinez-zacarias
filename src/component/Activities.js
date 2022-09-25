@@ -19,7 +19,7 @@ function Activity(props){
     return(
         <>
         {activity.map((item) => (            
-            <div className="Activities-card" style={{ backgroundImage: `url(${item.photo})`}}>
+            <div className="Activities-card" key={item.name} style={{ backgroundImage: `url(${item.photo})`}}>
                 <p className='Activities-text'>{item.name}</p>
             </div>
             ))}
