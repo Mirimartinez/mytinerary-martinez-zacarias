@@ -7,19 +7,19 @@ import {useParams} from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom'
 import NewComment from './NewComment'
 
-function Itinerary(){
+function Itinerary(props){
     let role = ""
     
     if(localStorage.getItem("user")) {
         role = JSON.parse(localStorage.getItem("user")).role 
     } 
 
-    const params = useParams()
-    const id = params
+    const id = props.cityId
 
     let {data : itinerary} = useGetCityItinerariesQuery(id)
     let allItineraries = itinerary
-    
+    console.log(id);
+
         const [open, setOpen] = useState(false)
     
         const handleOpenMenu = () => {

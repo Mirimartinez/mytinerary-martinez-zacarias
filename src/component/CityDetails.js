@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import {useGetCityQuery} from '../features/citiesApi'
 import Map from '../component/Maps'
 import newItinerary from '../component/NewItinerary'
+import Itinerary from './Itinerary'
 
 function CityDetails(){
     const params = useParams()
@@ -34,6 +35,7 @@ function CityDetails(){
             <p className='CityDetails-text'>{city?.description}</p>
             {isSuccess && <Map city={city}/>}
         {(localId !== " ") ? <newItinerary/> : null}
+        <Itinerary cityId={city._id}/>
         </div>
         )
     }
